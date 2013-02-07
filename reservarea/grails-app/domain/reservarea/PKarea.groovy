@@ -4,7 +4,7 @@ class PKarea {
 	String nameC
 	String serail
 	Date date
-	Sting employee
+	String employee
 	int	price
 
 	Reservarea reservarea

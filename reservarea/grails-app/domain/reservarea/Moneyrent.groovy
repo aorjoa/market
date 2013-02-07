@@ -4,10 +4,10 @@ class Moneyrent {
 
 	String month
 	String renter
-	string areaCode
+	String areaCode
 	String rent
 	String lessor
-	Strong status
+	String status
 
     static constraints = {
     }
