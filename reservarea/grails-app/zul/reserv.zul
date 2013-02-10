@@ -7,12 +7,121 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+  
+
+<style>
+
+    .centermap {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position:fixed;
+     top:20px;
+     left:20px;
+     }
+
+    .road {
+      position:fixed;
+     top:200px;
+     left:250px;
+
+ 
+}
+
+ .market {
+    display: block;
+    margin-left: auto;
+    margin-right: auto ;
+    position:fixed;
+    top:85px;
+     left:480px;
+   width: 180px; 
+cursor:pointer;
+
+    }
+
+ .marketover {
+    display: block;
+    margin-left: auto;
+    margin-right: auto ;
+    position:fixed;
+    top:85px;
+     left:480px;
+   width: 2030px; 
+cursor:pointer;
+    }
+
+ .toy {
+    display: block;
+    margin-left: auto;
+    margin-right: auto ;
+    position:fixed;
+    top:235px;
+     left:200px;
+   width: 180px; 
+cursor:pointer;
+    }
+
+ .office {
+    display: block;
+    margin-left: auto;
+    margin-right: auto ;
+    position:fixed;
+    top:235px;
+     left:800px;
+   width: 180px; 
+   cursor:pointer;
+    }
+
+.park {
+    display: block;
+    margin-left: auto;
+    margin-right: auto ;
+    position:fixed;
+    top:350px;
+     left:340px;
+   width: 180px; 
+ cursor:pointer;
+    }
+
+
+
+</style>
+
     <window apply="reservarea.ReservComposer">
 
         <hbox align="center">
-            <image src="${z.resource(dir:'images', file:'zkpowered_s.png')}"/>
-            <image src="${z.resource(dir:'images', file:'grails_logo.png')}"/>
+            <vbox>
+            <image src="${z.resource(dir:'images',file:'logofade.gif')}" width="100px" class="centermap"/>
+            <image id="road" src="${z.resource(dir:'images',file:'map/road.png')}" width="60%" class="road"/>
+            <image tooltip="markets, position=after_pointer, delay=200" id="market" src="${z.resource(dir:'images',file:'map/market.png')}" width="32%" class="market"/>
+            <image id="toy" src="${z.resource(dir:'images',file:'map/toy.png')}" width="20%" class="toy"/>
+            <image id="office" src="${z.resource(dir:'images',file:'map/office.png')}" width="20%" class="office"/>
+            <image id="park" src="${z.resource(dir:'images',file:'map/park.png')}" width="40%" class="park"/>
+          
+       </vbox>
         </hbox>
+
+    <popup id="markets" width="300px" height="100px">
+             <vlayout>
+                <vbox>
+                 <hbox>
+            <image src="${z.resource(dir:'images',file:'/tag/mk.png')}" width="100px"/>
+            <label value="ตลาดสินค้าเป็ดเตล็ด เสื้อผ้า ของใช้ในบ้าน ร้านขายของขวัญ ของที่ระลึก พบราคาประหยัดสุดๆ ได้ที่นี่ทุกวัน!!"/>
+            
+                </hbox>
+
+                <separator Bar="true"/>
+                <hbox>
+                <toolbarbutton label="รูปพื้นทีจริง"/>
+                <toolbarbutton label="รายละเอียด" />
+                <toolbarbutton label="จองพื้นที่" style="border-style:dashed;border-width:2px;border-color:orange;"/>
+                </hbox>
+            </vbox>
+        </vlayout>
+    </popup>
+
 
         <vbox id="scaffoldingBox"/>
 
