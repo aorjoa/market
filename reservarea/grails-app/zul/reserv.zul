@@ -7,8 +7,6 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-  
 
 <style>
 
@@ -41,16 +39,6 @@ cursor:pointer;
 
     }
 
- .marketover {
-    display: block;
-    margin-left: auto;
-    margin-right: auto ;
-    position:fixed;
-    top:85px;
-     left:480px;
-   width: 2030px; 
-cursor:pointer;
-    }
 
  .toy {
     display: block;
@@ -84,21 +72,18 @@ cursor:pointer;
    width: 180px; 
  cursor:pointer;
     }
-
-
-
 </style>
 
-    <window apply="reservarea.ReservComposer">
+    <window id="mainwindow" apply="reservarea.ReservComposer">
 
         <hbox align="center">
             <vbox>
-            <image src="${z.resource(dir:'images',file:'logofade.gif')}" width="100px" class="centermap"/>
+            <image src="${z.resource(dir:'images',file:'logofade.gif')}" width="100px" class="centermap" />
             <image id="road" src="${z.resource(dir:'images',file:'map/road.png')}" width="60%" class="road"/>
+            <image tooltip="parks, position=after_pointer, delay=200" id="park" src="${z.resource(dir:'images',file:'map/park.png')}" width="40%" class="park"/>
             <image tooltip="markets, position=after_pointer, delay=200" id="market" src="${z.resource(dir:'images',file:'map/market.png')}" width="32%" class="market"/>
-            <image id="toy" src="${z.resource(dir:'images',file:'map/toy.png')}" width="20%" class="toy"/>
-            <image id="office" src="${z.resource(dir:'images',file:'map/office.png')}" width="20%" class="office"/>
-            <image id="park" src="${z.resource(dir:'images',file:'map/park.png')}" width="40%" class="park"/>
+            <image tooltip="toys, position=after_pointer, delay=200" id="toy" src="${z.resource(dir:'images',file:'map/toy.png')}" width="20%" class="toy"/>
+            <image tooltip="offices, position=after_pointer, delay=200" id="office" src="${z.resource(dir:'images',file:'map/office.png')}" width="20%" class="office"/>
           
        </vbox>
         </hbox>
@@ -108,23 +93,279 @@ cursor:pointer;
                 <vbox>
                  <hbox>
             <image src="${z.resource(dir:'images',file:'/tag/mk.png')}" width="100px"/>
-            <label value="ตลาดสินค้าเป็ดเตล็ด เสื้อผ้า ของใช้ในบ้าน ร้านขายของขวัญ ของที่ระลึก พบราคาประหยัดสุดๆ ได้ที่นี่ทุกวัน!!"/>
-            
+            <label value="ตลาดอาหาร เสื้อผ้า ของใช้ในบ้าน ร้านขายของขวัญ ของที่ระลึก พบราคาประหยัดสุดๆ ได้ที่นี่ทุกวัน!!"/>
                 </hbox>
-
                 <separator Bar="true"/>
                 <hbox>
-                <toolbarbutton label="รูปพื้นทีจริง"/>
-                <toolbarbutton label="รายละเอียด" />
-                <toolbarbutton label="จองพื้นที่" style="border-style:dashed;border-width:2px;border-color:orange;"/>
+                <toolbarbutton id="showpicmarket" label="รูปพื้นทีจริง" />
+                <toolbarbutton id="showdetailmarket" label="รายละเอียด" />
+                <toolbarbutton id="showreservmarket" label="จองพื้นที่" style="border-style:dashed;border-width:2px;border-color:orange;"/>
+                </hbox>
+            </vbox>
+        </vlayout>
+    </popup>
+    <popup id="toys" width="300px" height="100px">
+             <vlayout>
+                <vbox>
+                 <hbox>
+            <image src="${z.resource(dir:'images',file:'/tag/ty.png')}" width="50px"/>
+            <label value="บริเวณจำหน่ายของใช้เกี่ยวกับเด็ก ของเด็กเล่น เกมส์ และอุปกรณ์เสริมทักษะต่างๆ"/>
+                </hbox>
+                <separator Bar="true"/>
+                <hbox>
+                <toolbarbutton id="showdetailtoy" label="รายละเอียด" />
+               <toolbarbutton id="showreservtoy" label="จองพื้นที่" style="border-style:dashed;border-width:2px;border-color:orange;"/>
+                </hbox>
+            </vbox>
+        </vlayout>
+    </popup>
+        <popup id="offices" width="300px" height="100px">
+             <vlayout>
+                <vbox>
+                 <hbox>
+            <image src="${z.resource(dir:'images',file:'/tag/of.png')}" width="45px"/>
+            <label value="ร้านขายเครื่องใช้ไฟฟ้า อิเล็กทรอนิกส์ และของพรีเมี่ยมต่าง รวมทั้งร้านตัวแทนจำหน่าย"/>
+                </hbox>
+                <separator Bar="true"/>
+                <hbox>
+                <toolbarbutton id="showdetailoffice" label="รายละเอียด" />
+                <toolbarbutton id="showreservoffice" label="จองพื้นที่" style="border-style:dashed;border-width:2px;border-color:orange;"/>
                 </hbox>
             </vbox>
         </vlayout>
     </popup>
 
+        <popup id="parks" width="300px" height="100px">
+             <vlayout>
+                <vbox>
+                 <hbox>
+            <image src="${z.resource(dir:'images',file:'/tag/pk.png')}" width="60px"/>
+            <label value="พื้นที่กิจกรรม ใช้จัด Event ต่างๆ มีบริการอำนวยความสะดวกในการจัดกิจกรรมไว้พร้อม สำหรับทุกงานกิจกรรม"/>
+                </hbox>
+                <separator Bar="true"/>
+                <hbox>
+                <toolbarbutton id="showdetailpark" label="รายละเอียด" />
+                <toolbarbutton id="showreserpark" label="ระบบจัดการพื้นที่จัดกิจกรรม" style="border-style:dashed;border-width:2px;border-color:red;"/>
+                </hbox>
+            </vbox>
+        </vlayout>
+    </popup>
 
-        <vbox id="scaffoldingBox"/>
+ <window id="popuppicmarket" border="normal" width="400px"  minheight="350" visible="flase">
+    <caption image="${z.resource(dir:'images',file:'caption.png')}" label=": หน้าต่างจัดการพื้นที่"/>
 
+    
+       
+    <window id="m" border="none" >
+            <image id="m1" src="images/previewpic/market/front.jpeg" width="400px" ></image>
+
+
+
+            <groupbox closable="false" sclass="z-demo-config" xmlns:w='client'>
+    <caption label="เลือกบริเวณ" />
+    <hlayout>
+        <button height="30px" width="100%" label="หน้าตลาด"
+            w:onClick="jq(this.$f('m1')).hide().fadeIn(1000);jq(this.$f('m1')).attr('src','images/previewpic/market/front.jpeg')" />
+        <button height="30px" width="100%" label="ภายในตลาด"
+           w:onClick="jq(this.$f('m1')).hide().fadeIn(1000);jq(this.$f('m1')).attr('src','images/previewpic/market/in.jpeg')" />
+        <button height="30px" width="100%" label="บรรายกาศการซื้อขาย"
+           w:onClick="jq(this.$f('m1')).hide().fadeIn(1000);jq(this.$f('m1')).attr('src','images/previewpic/market/scenerio.jpeg')"  />
+         <button height="30px" width="100%" label="ความสำเร็จ"
+          w:onClick="jq(this.$f('m1')).hide().fadeIn(1000);jq(this.$f('m1')).attr('src','images/previewpic/market/success.jpeg')" />
+    </hlayout>
+</groupbox>
     </window>
 
+
+
+</window>
+
+ <window id="popupdetailmarket" border="normal" width="400px"  minheight="350" visible="flase">
+    <caption image="${z.resource(dir:'images',file:'caption.png')}" label=": หน้าต่างจัดการพื้นที่"/>
+<vbox>
+    <hbox>
+        <image src="${z.resource(dir:'images',file:'/detail/m1.jpg')}" width="100px"/> 
+     <label value="พื้นที่ขายสินค้าพวกอาหาร เครื่องนุ่งห่ม สินค้าเบ็ตเตล็ด บริเวณนี้ควบคุมดูแลโดยเสี่ยเส็ง (คนที่สั่งให้ตามจับมังกรบาบีก้อนไป)" />
+     </hbox>
+     <label value="   โดยพื้นที่นี้มีเนื้อที่ทั้งหมด 1000 ตารางเมตร เป็นพื้นที่เชิงพาณิชย์ 800 ตารางเมตร และพื้นที่พักผ่อนหย่อนใจ 200 ตารางเมตร" />
+ </vbox>
+</window>
+
+
+ <window id="popupdetailtoy" border="normal" width="400px"  minheight="350" visible="flase">
+    <caption image="${z.resource(dir:'images',file:'caption.png')}" label=": หน้าต่างจัดการพื้นที่"/> 
+<vbox>
+    <hbox>
+        <image src="${z.resource(dir:'images',file:'/detail/t1.jpeg')}" width="100px"/> 
+     <label value="พื้นที่ขายสินค้าเด็ก ของใช้เกี่ยวกับเด็ก และของเล่นต่างๆ รวมถึงพื้นที่สนามเล่น เสริมสร้างพัฒนาการน้องๆ ขณะที่คุณพ่อคุณแม่ กำลังช้อฟปิ้ง ด้วยการดูแลที่ใกล้ชิดจากพี่เลี้ยง" />
+     </hbox>
+     <label value="   โดยพื้นที่นี้มีเนื้อที่ทั้งหมด 500 ตารางเมตร เป็นพื้นที่เชิงพาณิชย์ 300 ตารางเมตร และพื้นที่สนามเด็กเล่น 200 ตารางเมตร" />
+ </vbox>
+</window>
+
+
+ <window id="popupdetailoffice" border="normal" width="400px"  minheight="350" visible="flase">
+    <caption image="${z.resource(dir:'images',file:'caption.png')}" label=": หน้าต่างจัดการพื้นที่"/>
+ 
+    
+
+    <hbox>
+        <image src="${z.resource(dir:'images',file:'/detail/o1.jpeg')}" width="60px"/> 
+     <label value="พื้นที่สำนักงาน Office ของบริษัทต่างๆ เช่าเพื่อทำการขายสินค้า หรือเป็นตัวแทนจำหน่ายที่ถูกต้องตามกฏหมาย" />
+    
+     <label value="   โดยพื้นที่นี้มีเนื้อที่ทั้งหมด 1500 ตารางเมตร เป็นพื้นที่เชิงพาณิชย์ 1000 ตารางเมตร และพื้นที่ส่วนรวม 500 ตารางเมตร" />
+      </hbox>
+ 
+</window>
+
+
+ <window id="popupdetailpark" border="normal" width="400px"  minheight="350" visible="flase">
+    <caption image="${z.resource(dir:'images',file:'caption.png')}" label=": หน้าต่างจัดการพื้นที่"/>
+   <vbox>
+    <hbox>
+     <image src="${z.resource(dir:'images',file:'/detail/p1.jpeg')}" width="200px"/> 
+    <image src="${z.resource(dir:'images',file:'/detail/p2.jpeg')}" width="100px"/>
+     <image src="${z.resource(dir:'images',file:'/detail/p3.jpeg')}" width="90px"/>
+    </hbox> 
+       <hbox>
+     <label value="พื้นที่เช่าจัดกิจกรรมกลางแจ้งมีการอำนวยความสะดวกต่างๆ อย่างครบครัน อาทิ เครื่องทำความเย็นภายนอกอาคาร เครื่องเสียง เวที โปรเจกเตอร์ ราคาประหยัดสุดคุ้มให้บริการ" />
+
+     <label value="   โดยพื้นที่นี้มีเนื้อที่ทั้งหมด 1500 ตารางเมตร เป็นพื้นที่เชิงพาณิชย์ 1000 ตารางเมตร และพื้นที่ใช้จัดกิจกรรมเบืองหลัง 500 ตารางเมตร" />
+ </hbox>
+ </vbox>
+
+</window>
+
+ <window id="popupreservmarket" border="normal" width="500px"  minheight="450" visible="flase">
+    <caption image="${z.resource(dir:'images',file:'caption.png')}" label=": หน้าต่างจัดการพื้นที่"/>
+<vbox>
+       <window width="100%" border="none" style="text-align:center;">
+    <hbox spacing="0">
+      
+        <vbox spacing="0">
+            <hbox spacing="0">
+                <window width="50px" height="50px" id="a01" border="normal" style="text-align:center;">A01</window>
+                 <window width="50px" height="50px" id="a02" border="normal" style="text-align:center;">A02</window>
+                    <window width="50px" height="50px" id="a03" border="normal" style="text-align:center;">A03</window>
+                       <window width="50px" height="50px" id="a04" border="normal" style="text-align:center;">A04</window>
+                         <window width="50px" height="50px" id="a05" border="normal" style="text-align:center;">A05</window>
+                 <window width="50px" height="50px" id="a06" border="normal" style="text-align:center;">A06</window>
+                    <window width="50px" height="50px" id="a07" border="normal" style="text-align:center;">A07</window>
+                       <window width="50px" height="50px" id="a08" border="normal" style="text-align:center;">A08</window>
+            </hbox>
+             <hbox spacing="0">
+                <window width="50px" height="50px" id="a11" border="normal" style="text-align:center;">A11</window>
+                 <window width="50px" height="50px" id="a12" border="normal" style="text-align:center;">A12</window>
+                    <window width="50px" height="50px" id="a13" border="normal" style="text-align:center;">A13</window>
+                       <window width="50px" height="50px" id="a14" border="normal" style="text-align:center;">A14</window>
+                         <window width="50px" height="50px" id="a15" border="normal" style="text-align:center;">A15</window>
+                 <window width="50px" height="50px" id="a16" border="normal" style="text-align:center;">A16</window>
+                    <window width="50px" height="50px" id="a17" border="normal" style="text-align:center;">A17</window>
+                       <window width="50px" height="50px" id="a18" border="normal" style="text-align:center;">A18</window>
+            </hbox>
+            <separator/>
+             <separator/>
+         <hbox spacing="0">
+                <window width="50px" height="50px" id="a21" border="normal" style="text-align:center;">A21</window>
+                 <window width="50px" height="50px" id="a22" border="normal" style="text-align:center;">A22</window>
+                    <window width="50px" height="50px" id="a23" border="normal" style="text-align:center;">A23</window>
+                       <window width="50px" height="50px" id="a24" border="normal" style="text-align:center;">A24</window>
+                         <window width="50px" height="50px" id="a25" border="normal" style="text-align:center;">A25</window>
+                 <window width="50px" height="50px" id="a26" border="normal" style="text-align:center;">A26</window>
+                    <window width="50px" height="50px" id="a27" border="normal" style="text-align:center;">A27</window>
+                       <window width="50px" height="50px" id="a28" border="normal" style="text-align:center;">A28</window>
+            </hbox>
+         <hbox spacing="0">
+                <window width="50px" height="50px" id="a31" border="normal" style="text-align:center;">A31</window>
+                 <window width="50px" height="50px" id="a32" border="normal" style="text-align:center;">A32</window>
+                    <window width="50px" height="50px" id="a33" border="normal" style="text-align:center;">A33</window>
+                       <window width="50px" height="50px" id="a34" border="normal" style="text-align:center;">A34</window>
+                         <window width="50px" height="50px" id="a35" border="normal" style="text-align:center;">A35</window>
+                 <window width="50px" height="50px" id="a36" border="normal" style="text-align:center;">A36</window>
+                    <window width="50px" height="50px" id="a37" border="normal" style="text-align:center;">A37</window>
+                       <window width="50px" height="50px" id="a38" border="normal" style="text-align:center;">A38</window>
+            </hbox>
+    
+        </vbox>
+    </hbox>
+</window>   
+ </vbox>
+</window>
+
+
+<window id="popupreservtoy" border="normal" width="500px"  minheight="450" visible="flase">
+    <caption image="${z.resource(dir:'images',file:'caption.png')}" label=": หน้าต่างจัดการพื้นที่"/>
+<vbox>
+     <window width="100%" border="none" style="text-align:center;">
+    <hbox spacing="0">
+        <window width="50px" height="50px" id="B01" border="normal" style="text-align:center;">B01</window>
+        <vbox spacing="0">
+            <hbox spacing="0">
+                <window width="50px" height="50px" id="B02" border="normal" style="text-align:center;">B02</window> <window width="50px" height="50px" id="B03" border="normal" style="text-align:center;">B03</window>
+                <vbox spacing="0">
+                    <window width="50px" height="50px" id="B04" border="normal" style="text-align:center;">B04</window> 
+                    <window width="50px" height="50px" id="B05" border="normal" style="text-align:center;">B05</window>
+                </vbox>
+            </hbox>
+            <hbox spacing="0">
+                <vbox spacing="10px">
+                    <window width="50px" height="50px" id="B06" border="normal" style="text-align:center;">B06</window> 
+                    <window width="50px" height="50px" id="B07" border="normal" style="text-align:center;">B07</window>
+                </vbox>
+                <window width="50px" height="50px" id="B08" border="normal" style="text-align:center;">B08</window> 
+                <window width="50px" height="50px" id="B09" border="normal" style="text-align:center;">B09</window> 
+                <window id="b10" width="50px" height="50px" border="normal" style="text-align:center;">B10</window>
+                   <window width="50px" height="50px" id="B11" border="normal" style="text-align:center;background-color:blue;" >B11</window>
+                      <window width="50px" height="50px" id="B12" border="normal" style="text-align:center;">B12</window>
+            </hbox>
+        </vbox>
+    </hbox>
+</window>   
+ </vbox>
+</window>
+
+
+<window id="popupreservoffice" border="normal" width="650px"  minheight="450" visible="flase">
+    <caption image="${z.resource(dir:'images',file:'caption.png')}" label=": หน้าต่างจัดการพื้นที่"/>
+<vbox>
+           <window width="100%" border="none" style="text-align:center;">
+
+      
+        <vbox spacing="0">
+            <hbox spacing="0">
+                <window width="70px" height="70px" id="c01" border="normal" style="text-align:center;">C01</window>
+                 <window width="70px" height="70px" id="c02" border="normal" style="text-align:center;">C02</window>
+                    <window width="70px" height="70px" id="c03" border="normal" style="text-align:center;">C03</window>
+                       <window width="70px" height="70px" id="c04" border="normal" style="text-align:center;">C04</window>
+                         <window width="70px" height="70px" id="c05" border="normal" style="text-align:center;">C05</window>
+                 <window width="70px" height="70px" id="c06" border="normal" style="text-align:center;">C06</window>
+                    <window width="70px" height="70px" id="c07" border="normal" style="text-align:center;">C07</window>
+                       <window width="70px" height="70px" id="c08" border="normal" style="text-align:center;">C08</window>
+            </hbox>
+           
+            <separator/>
+             <separator/>
+             <label style="text-align:center;" value="---------------------------> ทางสายกลาง"/>
+              <separator/>
+             <separator/>
+      <hbox spacing="0">
+                <window width="70px" height="70px" id="c11" border="normal" style="text-align:center;">C11</window>
+                 <window width="70px" height="70px" id="c12" border="normal" style="text-align:center;">C12</window>
+                    <window width="70px" height="70px" id="c13" border="normal" style="text-align:center;">C13</window>
+                       <window width="70px" height="70px" id="c14" border="normal" style="text-align:center;">C14</window>
+                         <window width="70px" height="70px" id="c15" border="normal" style="text-align:center;">C15</window>
+                 <window width="70px" height="70px" id="c16" border="normal" style="text-align:center;">C16</window>
+                    <window width="70px" height="70px" id="c17" border="normal" style="text-align:center;">C17</window>
+                       <window width="70px" height="70px" id="c18" border="normal" style="text-align:center;">C18</window>
+            </hbox>
+        </vbox>
+</window>       
+ </vbox>
+</window>
+       
+
+
+
+<vbox id="scaffoldingBox"/>
+  </window>
 </zk>
