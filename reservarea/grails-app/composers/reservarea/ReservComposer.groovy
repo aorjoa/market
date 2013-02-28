@@ -137,7 +137,8 @@ class ReservComposer extends GrailsComposer {
         $("#popupdetailpark").doPopup()
 
             })
-        //reservation button event
+       //Business logic
+
  
     }
 }
