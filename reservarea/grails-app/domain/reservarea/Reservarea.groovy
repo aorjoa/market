@@ -1,11 +1,10 @@
 package reservarea
 
 class Reservarea {
-
     
 	String areacode
 	
-	String zone
+	Boolean staus=false
 	
 	Integer cost
 
