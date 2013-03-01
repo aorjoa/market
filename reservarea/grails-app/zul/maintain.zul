@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="reservarea.MaintainComposer">
+
+         <hbox align="center" >
+            <image src="${z.resource(dir:'images', file:'O1.jpg')}"/>
+                <hbox align="Right">
+                     <iframe width="120%" height="120%" src="http://ig.gmodules.com/gadgets/ifr?url=http://www.labpixies.com/campaigns/clock/mini_clock.xml&amp;nocache=0&amp;up_skin_id=&amp;upt_skin_id=hidden&amp;lang=en&amp;country=us&amp;.lang=en&amp;.country=us&amp;synd=ig&amp;mid=34&amp;ifpctok=-3234052241260630457&amp;parent=http://www.google.com&amp;extern_js=/extern_js/f/CgJlbhICdXMrMBI4ACwrMBM4ACw/v3vgcgA0x8g.js" />
+                </hbox>
+                <space /><space /><space /><space /><space /><space /><space />
+                <button id="btnMain" label="Back to Main" image="/images/back1.jpg" dir="reverse" width="200px" height="100px"/>
+               
+        </hbox>
+
+        <toolbar mold="panel" >
+                <label id="Powered By" style="color:green" value="Powered By"/>
+                <label id="Mr" style="color:#cccccc" value="Mrz.oWz Laiiaz"/>
+        </toolbar>
+
+         <grid>
+            <auxhead>
+                <auxheader colspan="4" label="Maintenance" style="font-size:14pt" align="Right" />
+            </auxhead>
+            <columns sizable="true">
+                <column label="Basic Information"  width="200px"/>
+                <column label="Particulars" width="535px"/>
+            </columns>
+            <rows>
+                <row>
+                 
+
+
+
+
+
+
+
+
+
+                 
+                </row>
+            </rows>
+        </grid>
+
+        <separator />
+
+        <separator />
+
+       
+         <grid height="350px" 
+            emptyMessage="Nothing in Inbox.">
+            <auxhead>
+                <auxheader colspan="4" label="Program" align="left" />
+
+            </auxhead>
+            <columns>
+                <column label="Status" width="200px" id="z6"/> 
+                <column label="Icon" width="45px" id="z1"/>  
+                <column label="Subject" id="z2"/>
+                <column label="Area" width="150px" id="z3"/>
+                <column label="Date" width="200px" id="z4"/>
+                <column label="Repairman" width="150px" id="z5"/>
+                
+            </columns>
+            <rows id="output">
+                
+            </rows>
+            
+        </grid>
+
+        <vbox id="scaffoldingBox"/>
+
+    </window>
+
+</zk>
