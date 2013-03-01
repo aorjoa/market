@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="reservarea.MoneyareaComposer">
+
+        <hbox align="center">
+            <image src="${z.resource(dir:'images', file:'zkpowered_s.png')}"/>
+            <image src="${z.resource(dir:'images', file:'grails_logo.png')}"/>
+        </hbox>
+		 <hbox align="center">
+            <image src="${z.resource(dir:'images', file:'zkpowered_s.png')}"/>
+            <image src="${z.resource(dir:'images', file:'grails_logo.png')}"/>
+        </hbox>
+		<groupbox width="900px"  >
+		<caption label="ผลการตรวจ"/>		
+				<hbox align="center" height="40px"><space bar="false" spacing="0px"/>ลำดับที่ :<space bar="false"/><textbox id = "tx1" />
+				<space bar="false" spacing="20px"/>รหัสพื้นที่:<space bar="false" spacing="10px"/><textbox id = "tx2" />
+				<space bar="false" spacing="100px"/>ผู้เช่า  :<space bar="false" spacing="10px"/><textbox id = "tx3" /></hbox>
+				<hbox align="center" height="40px"><space bar="false" spacing="0px"/>เบอร์โทร :<space bar="false"/><textbox id = "tx4" />
+				<space bar="false" spacing="37px"/> ร้าน :<space bar="false" spacing="10px"/><textbox id="tx5" />
+				<space bar="false" spacing="100px"/>ค่าเช่า  :<space bar="false" spacing="10px"/><textbox id = "tx6" /></hbox>
+				<hbox align="center" height="40px"><space bar="false" spacing="0px"/>วันที่ทำสัญญา:<space bar="false"/><textbox id = "tx7" />
+				<space bar="false" spacing="37px"/> สถานะ :<space bar="false" spacing="10px"/><textbox id="tx8" /></hbox>
+		<separator spacing="10px" />		
+		<vbox align="Center" width="900px">
+		<hbox> <button id ="btnsave" label="บันทึก"   height="30px"  width="125px"/> </hbox>
+		</vbox>
+	</groupbox>
+	<separator spacing="10px" />
+	<vbox>
+	<label value = "แจ้งค่าเช่า" />
+	<hbox>
+	<bandbox id="bd" mold="rounded" autodrop="true">
+	<bandpopup>
+	<listbox id="pick" height="200px" width="200px" mold="paging" autopaging="true">
+	<listhead>
+	<listheader label="ชื่อ" />
+	</listhead>
+	</listbox>
+	</bandpopup>
+	</bandbox> ค้นหา	</hbox>
+	<grid align="center" width="900px" height="200px" id="grid" >
+		<columns>
+			<column label="ลำดับ"/>
+			<column label="รหัสพื้นที่"/>
+			<column label="ผู้เช่า"/>
+			<column label="เบอร์โทร"/>
+			<column label="ร้าน"/>
+			<column label="ค่าเช่า"/>
+			<column label="วันที่ทำสัญญา"/>
+			<column label="สถานะการจ่ายค่าเช่า"/>
+			
+		</columns>
+		<rows>
+			<row>
+			   
+			</row>
+		</rows>
+	</grid>
+	</vbox>
+	
+	<separator spacing="20px" />
+
+        <vbox id="scaffoldingBox"/>
+
+    </window>
+
+</zk>
