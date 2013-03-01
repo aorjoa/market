@@ -26,6 +26,58 @@ class MaintainComposer extends GrailsComposer {
 
       	alert('successfully, keep it 100%')
 
-      	})
+      	
+          $('#x1')[0].text= ''
+          $('#x3')[0].text= ''
+          $('#x2')[0].text= ''
+          $('#x4')[0].text= ''
+
+
+          def goon= Maintenance.findAll()
+          $('#output > row').detach()
+          for(i in goon){
+                  $('#output').append{
+                          row (){
+
+                              image (src:"/ext/images/message.jpg")
+                              label( value: i.mess)
+                              label( value: i.area)
+                              label( value: i.date) 
+                              button(label:'Click!')
+               
+                           
+                            hbox {
+                              
+                              button(label:'No!', onClick:{ ev ->
+                                    def b = ev.target
+                                    b.setVisible(false)                                                 
+                                })
+                             image (src:"/ext/images/pass.jpg" , visible:true)  
+
+                              
+                            }
+                
+                          }
+                  }
+
+                 selectDelete = $("#output row:last-child button[label='Click!']")
+                        selectDelete.on('click',{                    
+                             alert('xxx')
+                         }) 
+
+           }
+          } 
+
+        })
+
+	  $('#clear').on('click',{
+          
+          $('#x1')[0].text= ''
+          $('#x3')[0].text= ''
+          $('#x2')[0].text= ''
+          $('#x4')[0].text= ''
+
+       })
+	  
     }
 }
