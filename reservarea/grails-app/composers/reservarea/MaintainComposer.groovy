@@ -7,26 +7,24 @@ import org.zkoss.zk.ui.select.annotation.Listen
 
 class MaintainComposer extends GrailsComposer {
 
-    def afterCompose = { window ->
+   def afterCompose = { window ->
         // initialize components here
-         $('#confrim').on('click',{
-
-           if($('#x1')[0].getText()=="" || $('#x2')[0].getText()==""  || $('#x3')[0].getText()=="" || $('#x4')[0].getText()==""){
-                 alert('please input data')
-          }else{
-
+        def selectDelete
+        def selectKnock
+        
+       
+        $('#confrim').on('click',{
 
        new Maintenance(
-        	annu:$('#x1').getText(),
-        	area:$('#x3').getText(),
-        	mess:$('#x2').getText(),
-        	date:$('#x4').val()
+          annu:$('#x1').getText(),
+          area:$('#x3').getText(),
+          mess:$('#x2').getText(),
+          date:$('#x4').val()
          
-      	).save()
+        ).save()
 
-      	alert('successfully, keep it 100%')
+         alert('successfully, Or show orders')
 
-      	
           $('#x1')[0].text= ''
           $('#x3')[0].text= ''
           $('#x2')[0].text= ''
@@ -66,11 +64,11 @@ class MaintainComposer extends GrailsComposer {
                          }) 
 
            }
-          } 
+           
 
         })
-
-	  $('#clear').on('click',{
+        
+        $('#clear').on('click',{
           
           $('#x1')[0].text= ''
           $('#x3')[0].text= ''
@@ -78,6 +76,7 @@ class MaintainComposer extends GrailsComposer {
           $('#x4')[0].text= ''
 
        })
-	  
+
+
     }
 }

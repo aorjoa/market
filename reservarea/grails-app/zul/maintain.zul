@@ -24,28 +24,45 @@
                 <label id="Mr" style="color:#cccccc" value="Mrz.oWz Laiiaz"/>
         </toolbar>
 
-         <grid>
+        <grid>
             <auxhead>
                 <auxheader colspan="4" label="Maintenance" style="font-size:14pt" align="Right" />
             </auxhead>
             <columns sizable="true">
                 <column label="Basic Information"  width="200px"/>
                 <column label="Particulars" width="535px"/>
+               
             </columns>
             <rows>
                 <row>
-                 
+                    <label value= "Annunciator :"/>
+                    <textbox id="x1" width="80%"/>
+                    
 
-
-
-
-
-
-
-
-
-                 
                 </row>
+                <row>
+                    <label value= "Message :"/>
+                    <textbox id="x2" width="80%"  rows="2"/>       
+
+                </row>
+                <row>
+                    <label value= "Area :"/>
+                    <textbox id="x3" width="80%"/>
+                </row>
+                <row>
+                    <label value= "Date :"/>
+                    <cell colspan="2">
+                        <datebox id="x4" cols="12" format="long+medium"  mold="rounded" width="230px" />
+                    </cell>
+                </row>
+                <row>
+                    <label value="Confirm :" />
+                    <hbox>
+                        <button id="confrim" label="Agree" /> <space />
+                        <button id="clear" label="Clear" />
+                    </hbox>
+                </row>
+                
             </rows>
         </grid>
 
@@ -54,23 +71,22 @@
         <separator />
 
        
-         <grid height="350px" 
+         <grid height="350px" id="aaa" 
             emptyMessage="Nothing in Inbox.">
             <auxhead>
                 <auxheader colspan="4" label="Program" align="left" />
 
             </auxhead>
             <columns>
-                <column label="Status" width="200px" id="z6"/> 
-                <column label="Icon" width="45px" id="z1"/>  
+                <column label="Icon" width="45px" id="z1"/>
                 <column label="Subject" id="z2"/>
                 <column label="Area" width="150px" id="z3"/>
-                <column label="Date" width="200px" id="z4"/>
-                <column label="Repairman" width="150px" id="z5"/>
-                
+                <column label="Date" width="150px" id="z4"/>
+                <column label="Repairman" width="100px" id="z5"/>
+                <column label="Status" width="200px" id="z6"/>
             </columns>
             <rows id="output">
-                
+              
             </rows>
             
         </grid>
