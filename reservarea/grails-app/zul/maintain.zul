@@ -90,6 +90,50 @@
             </rows>
             
         </grid>
+          <separator /><separator />
+
+        <grid width="450px">
+        <columns>
+            <column label="Option" width="100px" />
+            <column label="Message" />
+        </columns>
+
+        <rows>
+         <row>
+                To :
+                <hbox>
+                    <textbox width="150px" id="lol1"/>
+                    <hbox>
+                        <image src="${z.resource(dir:'images', file:'bullet.jpg')}"/>
+                        <label value="Owner or Staff."/>
+                    </hbox>
+                </hbox>
+            </row>
+             <row>
+                Subject :
+                <hbox>
+                    <textbox width="150px" id="lol2"/>
+                    <hbox>
+                        <image src="${z.resource(dir:'images', file:'bullet.jpg')}"/>
+                        <label value="Comment." popup="title" />
+                    </hbox>
+                </hbox>
+            </row>
+            <row>
+                Introduction:
+                <hbox>
+                    <textbox  rows="3" width="250px" id="lol3"/>
+                </hbox>
+            </row>
+            <row>
+                <button id="mess" label="Submit" />
+            </row>
+        </rows>
+    </grid>
+
+   
+     <separator />
+      <separator />
 
         <vbox id="scaffoldingBox"/>
 

@@ -7,7 +7,7 @@ import org.zkoss.zk.ui.select.annotation.Listen
 
 class MaintainComposer extends GrailsComposer {
 
-   def afterCompose = { window ->
+     def afterCompose = { window ->
         // initialize components here
         def selectDelete
         def selectKnock
@@ -62,11 +62,23 @@ class MaintainComposer extends GrailsComposer {
                         selectDelete.on('click',{                    
                              alert('xxx')
                          }) 
-
            }
-           
-
         })
+
+         $('#mess').on('click',{
+          if($('#lol1').getText()=="" || $('#lol2').getText()=="" || $('#lol3').getText()==""){
+            alert('please input data')
+          }else{
+          new Comment(
+
+            to:$('#lol1').getText(),
+            subject:$('#lol2').getText(),
+            intro:$('#lol3').getText()
+            ).save()
+          alert('ไดรัแจ้งความคิดเห็ฯแล้ว')
+        }
+
+          })
         
         $('#clear').on('click',{
           
@@ -76,7 +88,6 @@ class MaintainComposer extends GrailsComposer {
           $('#x4')[0].text= ''
 
        })
-
 
     }
 }
