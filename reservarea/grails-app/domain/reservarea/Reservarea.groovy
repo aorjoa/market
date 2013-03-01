@@ -4,7 +4,7 @@ class Reservarea {
     
 	String areacode
 	
-	Boolean staus=false
+	Boolean status=true
 	
 	Integer cost
 

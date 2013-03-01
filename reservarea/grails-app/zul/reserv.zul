@@ -75,7 +75,6 @@ cursor:pointer;
 </style>
 
     <window id="mainwindow" apply="reservarea.ReservComposer">
-
         <hbox align="center">
             <vbox>
             <image src="${z.resource(dir:'images',file:'logofade.gif')}" width="100px" class="centermap" />
@@ -151,7 +150,7 @@ cursor:pointer;
         </vlayout>
     </popup>
 
- <window id="popuppicmarket" border="normal" width="400px"  minheight="350" visible="flase">
+ <window id="popuppicmarket" border="normal" width="400px"  minheight="350" visible="false">
     <caption image="${z.resource(dir:'images',file:'caption.png')}" label=": หน้าต่างจัดการพื้นที่"/>
 
     
@@ -180,7 +179,7 @@ cursor:pointer;
 
 </window>
 
- <window id="popupdetailmarket" border="normal" width="400px"  minheight="350" visible="flase">
+ <window id="popupdetailmarket" border="normal" width="400px"  minheight="350" visible="false">
     <caption image="${z.resource(dir:'images',file:'caption.png')}" label=": หน้าต่างจัดการพื้นที่"/>
 <vbox>
     <hbox>
@@ -192,7 +191,7 @@ cursor:pointer;
 </window>
 
 
- <window id="popupdetailtoy" border="normal" width="400px"  minheight="350" visible="flase">
+ <window id="popupdetailtoy" border="normal" width="400px"  minheight="350" visible="false">
     <caption image="${z.resource(dir:'images',file:'caption.png')}" label=": หน้าต่างจัดการพื้นที่"/> 
 <vbox>
     <hbox>
@@ -204,7 +203,7 @@ cursor:pointer;
 </window>
 
 
- <window id="popupdetailoffice" border="normal" width="400px"  minheight="350" visible="flase">
+ <window id="popupdetailoffice" border="normal" width="400px"  minheight="350" visible="false">
     <caption image="${z.resource(dir:'images',file:'caption.png')}" label=": หน้าต่างจัดการพื้นที่"/>
  
     
@@ -219,7 +218,7 @@ cursor:pointer;
 </window>
 
 
- <window id="popupdetailpark" border="normal" width="400px"  minheight="350" visible="flase">
+ <window id="popupdetailpark" border="normal" width="400px"  minheight="350" visible="false">
     <caption image="${z.resource(dir:'images',file:'caption.png')}" label=": หน้าต่างจัดการพื้นที่"/>
    <vbox>
     <hbox>
@@ -236,54 +235,54 @@ cursor:pointer;
 
 </window>
 
- <window id="popupreservmarket" border="normal" width="500px"  minheight="450" visible="flase">
+ <window id="popupreservmarket" border="normal" width="500px"  minheight="450" visible="false" >
     <caption image="${z.resource(dir:'images',file:'caption.png')}" label=": หน้าต่างจัดการพื้นที่"/>
 <vbox>
-       <window width="100%" border="none" style="text-align:center;">
+       <window width="100%" border="none" style="text-align:center;" >
     <hbox spacing="0">
       
         <vbox spacing="0">
-            <hbox spacing="0">
-                <window width="50px" height="50px" id="a01" border="normal" style="text-align:center;">A01</window>
-                 <window width="50px" height="50px" id="a02" border="normal" style="text-align:center;">A02</window>
-                    <window width="50px" height="50px" id="a03" border="normal" style="text-align:center;">A03</window>
-                       <window width="50px" height="50px" id="a04" border="normal" style="text-align:center;">A04</window>
-                         <window width="50px" height="50px" id="a05" border="normal" style="text-align:center;">A05</window>
-                 <window width="50px" height="50px" id="a06" border="normal" style="text-align:center;">A06</window>
-                    <window width="50px" height="50px" id="a07" border="normal" style="text-align:center;">A07</window>
-                       <window width="50px" height="50px" id="a08" border="normal" style="text-align:center;">A08</window>
+            <hbox id="asd" spacing="0">
+                <window width="50px" height="50px" id="a01" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A01</window>
+                 <window width="50px" height="50px" id="a02" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A02</window>
+                    <window width="50px" height="50px" id="a03" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A03</window>
+                       <window width="50px" height="50px" id="a04" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A04</window>
+                         <window width="50px" height="50px" id="a05" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A05</window>
+                 <window width="50px" height="50px" id="a06" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A06</window>
+                    <window width="50px" height="50px" id="a07" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A07</window>
+                       <window width="50px" height="50px" id="a08" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A08</window>
             </hbox>
              <hbox spacing="0">
-                <window width="50px" height="50px" id="a11" border="normal" style="text-align:center;">A11</window>
-                 <window width="50px" height="50px" id="a12" border="normal" style="text-align:center;">A12</window>
-                    <window width="50px" height="50px" id="a13" border="normal" style="text-align:center;">A13</window>
-                       <window width="50px" height="50px" id="a14" border="normal" style="text-align:center;">A14</window>
-                         <window width="50px" height="50px" id="a15" border="normal" style="text-align:center;">A15</window>
-                 <window width="50px" height="50px" id="a16" border="normal" style="text-align:center;">A16</window>
-                    <window width="50px" height="50px" id="a17" border="normal" style="text-align:center;">A17</window>
-                       <window width="50px" height="50px" id="a18" border="normal" style="text-align:center;">A18</window>
+                <window width="50px" height="50px" id="a11" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A11</window>
+                 <window width="50px" height="50px" id="a12" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A12</window>
+                    <window width="50px" height="50px" id="a13" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A13</window>
+                       <window width="50px" height="50px" id="a14" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A14</window>
+                         <window width="50px" height="50px" id="a15" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A15</window>
+                 <window width="50px" height="50px" id="a16" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A16</window>
+                    <window width="50px" height="50px" id="a17" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A17</window>
+                       <window width="50px" height="50px" id="a18" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A18</window>
             </hbox>
             <separator/>
              <separator/>
          <hbox spacing="0">
-                <window width="50px" height="50px" id="a21" border="normal" style="text-align:center;">A21</window>
-                 <window width="50px" height="50px" id="a22" border="normal" style="text-align:center;">A22</window>
-                    <window width="50px" height="50px" id="a23" border="normal" style="text-align:center;">A23</window>
-                       <window width="50px" height="50px" id="a24" border="normal" style="text-align:center;">A24</window>
-                         <window width="50px" height="50px" id="a25" border="normal" style="text-align:center;">A25</window>
-                 <window width="50px" height="50px" id="a26" border="normal" style="text-align:center;">A26</window>
-                    <window width="50px" height="50px" id="a27" border="normal" style="text-align:center;">A27</window>
-                       <window width="50px" height="50px" id="a28" border="normal" style="text-align:center;">A28</window>
+                <window width="50px" height="50px" id="a21" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A21</window>
+                 <window width="50px" height="50px" id="a22" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A22</window>
+                    <window width="50px" height="50px" id="a23" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A23</window>
+                       <window width="50px" height="50px" id="a24" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A24</window>
+                         <window width="50px" height="50px" id="a25" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A25</window>
+                 <window width="50px" height="50px" id="a26" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A26</window>
+                    <window width="50px" height="50px" id="a27" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A27</window>
+                       <window width="50px" height="50px" id="a28" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A28</window>
             </hbox>
          <hbox spacing="0">
-                <window width="50px" height="50px" id="a31" border="normal" style="text-align:center;">A31</window>
-                 <window width="50px" height="50px" id="a32" border="normal" style="text-align:center;">A32</window>
-                    <window width="50px" height="50px" id="a33" border="normal" style="text-align:center;">A33</window>
-                       <window width="50px" height="50px" id="a34" border="normal" style="text-align:center;">A34</window>
-                         <window width="50px" height="50px" id="a35" border="normal" style="text-align:center;">A35</window>
-                 <window width="50px" height="50px" id="a36" border="normal" style="text-align:center;">A36</window>
-                    <window width="50px" height="50px" id="a37" border="normal" style="text-align:center;">A37</window>
-                       <window width="50px" height="50px" id="a38" border="normal" style="text-align:center;">A38</window>
+                <window width="50px" height="50px" id="a31" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A31</window>
+                 <window width="50px" height="50px" id="a32" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A32</window>
+                    <window width="50px" height="50px" id="a33" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A33</window>
+                       <window width="50px" height="50px" id="a34" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A34</window>
+                         <window width="50px" height="50px" id="a35" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A35</window>
+                 <window width="50px" height="50px" id="a36" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A36</window>
+                    <window width="50px" height="50px" id="a37" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A37</window>
+                       <window width="50px" height="50px" id="a38" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A38</window>
             </hbox>
     
         </vbox>
@@ -293,30 +292,30 @@ cursor:pointer;
 </window>
 
 
-<window id="popupreservtoy" border="normal" width="500px"  minheight="450" visible="flase">
+<window id="popupreservtoy" border="normal" width="500px"  minheight="450" visible="false">
     <caption image="${z.resource(dir:'images',file:'caption.png')}" label=": หน้าต่างจัดการพื้นที่"/>
 <vbox>
      <window width="100%" border="none" style="text-align:center;">
     <hbox spacing="0">
-        <window width="50px" height="50px" id="B01" border="normal" style="text-align:center;">B01</window>
+        <window width="50px" height="50px" id="B01" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B01</window>
         <vbox spacing="0">
             <hbox spacing="0">
-                <window width="50px" height="50px" id="B02" border="normal" style="text-align:center;">B02</window> <window width="50px" height="50px" id="B03" border="normal" style="text-align:center;">B03</window>
+                <window width="50px" height="50px" id="B02" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B02</window> <window width="50px" height="50px" id="B03" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B03</window>
                 <vbox spacing="0">
-                    <window width="50px" height="50px" id="B04" border="normal" style="text-align:center;">B04</window> 
-                    <window width="50px" height="50px" id="B05" border="normal" style="text-align:center;">B05</window>
+                    <window width="50px" height="50px" id="B04" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B04</window> 
+                    <window width="50px" height="50px" id="B05" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B05</window>
                 </vbox>
             </hbox>
             <hbox spacing="0">
                 <vbox spacing="10px">
-                    <window width="50px" height="50px" id="B06" border="normal" style="text-align:center;">B06</window> 
-                    <window width="50px" height="50px" id="B07" border="normal" style="text-align:center;">B07</window>
+                    <window width="50px" height="50px" id="B06" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B06</window> 
+                    <window width="50px" height="50px" id="B07" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B07</window>
                 </vbox>
-                <window width="50px" height="50px" id="B08" border="normal" style="text-align:center;">B08</window> 
-                <window width="50px" height="50px" id="B09" border="normal" style="text-align:center;">B09</window> 
-                <window id="b10" width="50px" height="50px" border="normal" style="text-align:center;">B10</window>
-                   <window width="50px" height="50px" id="B11" border="normal" style="text-align:center;background-color:blue;" >B11</window>
-                      <window width="50px" height="50px" id="B12" border="normal" style="text-align:center;">B12</window>
+                <window width="50px" height="50px" id="B08" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B08</window> 
+                <window width="50px" height="50px" id="B09" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B09</window> 
+                <window id="b10" width="50px" height="50px" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B10</window>
+                   <window width="50px" height="50px" id="B11" border="normal" style="text-align:center;background-color:blue;cursor:pointer;" >B11</window>
+                      <window width="50px" height="50px" id="B12" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B12</window>
             </hbox>
         </vbox>
     </hbox>
@@ -325,7 +324,7 @@ cursor:pointer;
 </window>
 
 
-<window id="popupreservoffice" border="normal" width="650px"  minheight="450" visible="flase">
+<window id="popupreservoffice" border="normal" width="650px"  minheight="450" visible="false">
     <caption image="${z.resource(dir:'images',file:'caption.png')}" label=": หน้าต่างจัดการพื้นที่"/>
 <vbox>
            <window width="100%" border="none" style="text-align:center;">
@@ -333,14 +332,14 @@ cursor:pointer;
       
         <vbox spacing="0">
             <hbox spacing="0">
-                <window width="70px" height="70px" id="c01" border="normal" style="text-align:center;">C01</window>
-                 <window width="70px" height="70px" id="c02" border="normal" style="text-align:center;">C02</window>
-                    <window width="70px" height="70px" id="c03" border="normal" style="text-align:center;">C03</window>
-                       <window width="70px" height="70px" id="c04" border="normal" style="text-align:center;">C04</window>
-                         <window width="70px" height="70px" id="c05" border="normal" style="text-align:center;">C05</window>
-                 <window width="70px" height="70px" id="c06" border="normal" style="text-align:center;">C06</window>
-                    <window width="70px" height="70px" id="c07" border="normal" style="text-align:center;">C07</window>
-                       <window width="70px" height="70px" id="c08" border="normal" style="text-align:center;">C08</window>
+                <window width="70px" height="70px" id="c01" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">C01</window>
+                 <window width="70px" height="70px" id="c02" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">C02</window>
+                    <window width="70px" height="70px" id="c03" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">C03</window>
+                       <window width="70px" height="70px" id="c04" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">C04</window>
+                         <window width="70px" height="70px" id="c05" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">C05</window>
+                 <window width="70px" height="70px" id="c06" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">C06</window>
+                    <window width="70px" height="70px" id="c07" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">C07</window>
+                       <window width="70px" height="70px" id="c08" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">C08</window>
             </hbox>
            
             <separator/>
@@ -349,14 +348,14 @@ cursor:pointer;
               <separator/>
              <separator/>
       <hbox spacing="0">
-                <window width="70px" height="70px" id="c11" border="normal" style="text-align:center;">C11</window>
-                 <window width="70px" height="70px" id="c12" border="normal" style="text-align:center;">C12</window>
-                    <window width="70px" height="70px" id="c13" border="normal" style="text-align:center;">C13</window>
-                       <window width="70px" height="70px" id="c14" border="normal" style="text-align:center;">C14</window>
-                         <window width="70px" height="70px" id="c15" border="normal" style="text-align:center;">C15</window>
-                 <window width="70px" height="70px" id="c16" border="normal" style="text-align:center;">C16</window>
-                    <window width="70px" height="70px" id="c17" border="normal" style="text-align:center;">C17</window>
-                       <window width="70px" height="70px" id="c18" border="normal" style="text-align:center;">C18</window>
+                <window width="70px" height="70px" id="c11" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">C11</window>
+                 <window width="70px" height="70px" id="c12" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">C12</window>
+                    <window width="70px" height="70px" id="c13" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">C13</window>
+                       <window width="70px" height="70px" id="c14" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">C14</window>
+                         <window width="70px" height="70px" id="c15" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">C15</window>
+                 <window width="70px" height="70px" id="c16" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">C16</window>
+                    <window width="70px" height="70px" id="c17" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">C17</window>
+                       <window width="70px" height="70px" id="c18" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">C18</window>
             </hbox>
         </vbox>
 </window>       

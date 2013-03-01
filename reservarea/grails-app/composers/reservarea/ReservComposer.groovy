@@ -128,7 +128,9 @@ class ReservComposer extends GrailsComposer {
     		$("#park").setLeft("340px")
     		})
        
-        $("#showdetailpark").on('click',{
+    
+
+         $("#showdetailpark").on('click',{
 
         $("#popupdetailpark").setVisible(true)
         $("#popupdetailpark").setLeft("20%")
@@ -137,8 +139,15 @@ class ReservComposer extends GrailsComposer {
         $("#popupdetailpark").doPopup()
 
             })
-       //Business logic
 
- 
+
+       //Business logic
+       def areaselect = Reservarea.findAll()
+       for(c in areaselect){
+
+        if(c.status==false){
+            $("window window #$c.areacode").setStyle("text-align:center;background-color:red;")
+        }
+       }
     }
 }
