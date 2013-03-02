@@ -15,7 +15,7 @@ class MaintainComposer extends GrailsComposer {
        
         $('#confrim').on('click',{
           def user = session["login_name"]
-          def userxx = Login.findByUser_name(user.user_name)
+          def userxx = Login.findByUsername(user.username)
 
 
        new Maintenance(

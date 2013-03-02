@@ -12,7 +12,7 @@
         <hbox>
             <image src="${z.resource(dir:'images', file:'logofade.gif')}"/>
             
-           <label style = "position:absolute;right:300px;bottom:5px ;font-size:25px;">สัญญาการจองพื้นที่(ฉบับย่อ)</label>
+           <label style = "position:absolute;right:0px;bottom:5px ;font-size:25px;">สัญญาการจองพื้นที่(ฉบับย่อ)</label>
             
         </hbox>
   

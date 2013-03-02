@@ -16,7 +16,7 @@ class LoginComposer extends GrailsComposer {
 
 
             def ss = $('#user_name').getText()
-            def e = Login.findByUser_name(ss)
+            def e = Login.findByUsername(ss)
             def s = Staff.findByUser_name(ss) 
 
             

@@ -7,9 +7,9 @@ class Contract {
 	String 	name
 	String	address
 	String	tel
+	Login	login
 
-
-
+	static hasOne = [login:Login]
     static constraints = {
 
     }
