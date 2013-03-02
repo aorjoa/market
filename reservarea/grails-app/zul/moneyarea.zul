@@ -8,11 +8,8 @@
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
     <window apply="reservarea.MoneyareaComposer">
-
-        <hbox align="center">
-            <image src="${z.resource(dir:'images', file:'zkpowered_s.png')}"/>
-            <image src="${z.resource(dir:'images', file:'grails_logo.png')}"/>
-        </hbox>
+	
+        <vbox align="center" width="100%" >
 		 <hbox align="center">
             <image src="${z.resource(dir:'images', file:'zkpowered_s.png')}"/>
             <image src="${z.resource(dir:'images', file:'grails_logo.png')}"/>
@@ -68,7 +65,7 @@
 	<separator spacing="20px" />
 
         <vbox id="scaffoldingBox"/>
-
+		</vbox>
     </window>
 
 </zk>

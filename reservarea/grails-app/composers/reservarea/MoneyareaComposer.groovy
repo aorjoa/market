@@ -36,5 +36,41 @@ class MoneyareaComposer extends GrailsComposer {
 			$('#tx8')[0].text= ''
 			}
 			})
+			
+			
+		def mShow = Moneyarea.findAll()
+              for(m in mShow) {
+                $('#pick').append {
+                  listitem(value: m) {
+                    listcell(value: m.area, label: m.area)
+
+                    
+                }
+              }
+          }
+
+	         $('#pick').on('select', {
+				def ss = $(it).val()
+				
+			 $('#grid > rows').append{
+
+      
+            row{
+			  
+              label(value:ss.no)
+              label(value:ss.area)
+              label(value:ss.renter)
+              label(value:ss.phone)
+			  label(value:ss.store)
+			  label(value:ss.rental)
+			  label(value:ss.date)
+			  label(value:ss.status)
+			  
+			  
+            }
+			}
+			
+				
+		})
     }
 }
