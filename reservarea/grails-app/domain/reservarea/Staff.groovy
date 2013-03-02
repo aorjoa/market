@@ -1,11 +1,10 @@
 package reservarea
 
-class Login {
+class Staff {
 
 	String user_name
 	String password
 
-	static hasMany = [maintenances:Maintenance]
     static constraints = {
     }
 }
