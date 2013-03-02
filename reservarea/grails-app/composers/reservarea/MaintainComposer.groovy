@@ -14,12 +14,18 @@ class MaintainComposer extends GrailsComposer {
         
        
         $('#confrim').on('click',{
+          def user = session["login_name"]
+          def userxx = Login.findByUser_name(user.user_name)
+
 
        new Maintenance(
           annu:$('#x1').getText(),
           area:$('#x3').getText(),
           mess:$('#x2').getText(),
-          date:$('#x4').val()
+          date:$('#x4').val(),
+          sta:false,
+          login:userxx
+
          
         ).save()
 
@@ -45,10 +51,14 @@ class MaintainComposer extends GrailsComposer {
                
                            
                             hbox {
-                              
+                             
+
                               button(label:'No!', onClick:{ ev ->
                                     def b = ev.target
-                                    b.setVisible(false)                                                 
+                                    b.setVisible(false)
+                                    new Maintenance(
+                                        sta:true
+                                      ).save                                                 
                                 })
                              image (src:"/ext/images/pass.jpg" , visible:true)  
 
@@ -57,10 +67,13 @@ class MaintainComposer extends GrailsComposer {
                 
                           }
                   }
+                  
 
                  selectDelete = $("#output row:last-child button[label='Click!']")
-                        selectDelete.on('click',{                    
-                             alert('xxx')
+                        selectDelete.on('click',{ 
+                            def idel = session["staff_name"]
+                            def dty = Staff.findByUser_name(idel.user_name)
+                             alert(''+dty)
                          }) 
            }
         })
@@ -77,6 +90,11 @@ class MaintainComposer extends GrailsComposer {
             ).save()
           alert('ไดรัแจ้งความคิดเห็ฯแล้ว')
         }
+
+          })
+
+         $('#btnMain').on('click',{
+         redirect(uri:"show.zul")
 
           })
         
