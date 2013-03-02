@@ -14,17 +14,22 @@ class MaintainComposer extends GrailsComposer {
         
        
         $('#confrim').on('click',{
+<<<<<<< HEAD
           def user = session["login_name"]
           def userxx = Login.findByUsername(user.username)
 
+=======
+>>>>>>> issue-4333
 
+          def user = session["login_name"]
+          
        new Maintenance(
           annu:$('#x1').getText(),
           area:$('#x3').getText(),
           mess:$('#x2').getText(),
           date:$('#x4').val(),
           sta:false,
-          login:userxx
+          login:user
 
          
         ).save()
@@ -37,7 +42,7 @@ class MaintainComposer extends GrailsComposer {
           $('#x4')[0].text= ''
 
 
-          def goon= Maintenance.findAll()
+           def goon= Maintenance.findAll()
           $('#output > row').detach()
           for(i in goon){
                   $('#output').append{
@@ -52,30 +57,38 @@ class MaintainComposer extends GrailsComposer {
                            
                             hbox {
                              
-
+                              def pp =image (src:"/ext/images/pass.jpg" , visible:false) 
                               button(label:'No!', onClick:{ ev ->
-                                    def b = ev.target
+                                 // def ss = $(it).target
+                                    def b = ev.target 
                                     b.setVisible(false)
-                                    new Maintenance(
-                                        sta:true
-                                      ).save                                                 
+                                    pp.setVisible(true)
+              
+                                     
                                 })
-                             image (src:"/ext/images/pass.jpg" , visible:true)  
+                             
 
                               
                             }
                 
                           }
                   }
-                  
+                  }
 
                  selectDelete = $("#output row:last-child button[label='Click!']")
                         selectDelete.on('click',{ 
                             def idel = session["staff_name"]
-                            def dty = Staff.findByUser_name(idel.user_name)
-                             alert(''+dty)
-                         }) 
-           }
+                            def dty = Staff.findByUser_name(idel.user_name) 
+                             alert('ดูแลโดย Mr.'+idel.user_name)
+
+                         })
+               def selectDelete2 = $("#output row:last-child button[label='No!']")
+                        selectDelete2.on('click',{ 
+                            //def ss = $(it).val()
+                             alert('updated status')
+
+                         })  
+           
         })
 
          $('#mess').on('click',{
@@ -88,13 +101,21 @@ class MaintainComposer extends GrailsComposer {
             subject:$('#lol2').getText(),
             intro:$('#lol3').getText()
             ).save()
-          alert('ไดรัแจ้งความคิดเห็ฯแล้ว')
+          alert('I got it.')
+            $('#lol1')[0].text=''
+            $('#lol2')[0].text=''
+            $('#lol3')[0].text=''
         }
 
           })
 
          $('#btnMain').on('click',{
          redirect(uri:"show.zul")
+
+          })
+
+          $('#btnOut').on('click',{
+         redirect(uri:"login.zul")
 
           })
         
