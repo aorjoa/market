@@ -5,6 +5,8 @@ class Contract {
 	String	date
 	String	area
 	String 	name
+	String	address
+	String	tel
 
 
 

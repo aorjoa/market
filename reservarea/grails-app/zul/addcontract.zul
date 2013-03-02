@@ -12,14 +12,14 @@
         <hbox>
             <image src="${z.resource(dir:'images', file:'logofade.gif')}"/>
             
-           <label style = "position:absolute;right:auto;bottom:5px ;font-size:25px;">สัญญาการจองพื้นที่(ฉบับย่อ)</label>
+           <label style = "position:absolute;right:300px;bottom:5px ;font-size:25px;">สัญญาการจองพื้นที่(ฉบับย่อ)</label>
             
         </hbox>
   
         </vbox>
 
         <separator spacing="20px" />
-         <vbox width = "900px" style= "position: relative; margin:auto;border:20px solid darkgrey; border-style:outset;">
+         <vbox width = "900px" style= "position: relative; margin:auto;border:20px solid #eeeeee; border-style:outset;">
 
           <vbox width = "600px" style= "position: relative; margin:auto;">
 
@@ -56,7 +56,7 @@
 
         <separator spacing="30px" />
 
-        <button label = "บันทึกสัญญา" mold = "trendy"  style= "margin-left: 300px;"/>
+        <button id = "save" label = "บันทึกสัญญา" mold = "trendy"  style= "margin-left: 300px;"/>
         <separator spacing="20px" />
         </vbox> 
         </vbox> 
