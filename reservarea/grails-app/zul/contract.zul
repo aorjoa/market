@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="reservarea.ContractComposer">
+        <separator spacing="20px" />
+        <vbox width = "900px" style= "position: relative; margin:auto;">
+        <hbox>
+            <image src="${z.resource(dir:'images', file:'logofade.gif')}"/>
+            
+           <button label="เพิ่มสัญญา" mold = "trendy" width = "130px" height = "30px" style = "position:absolute;right:0px;bottom:5px ;font-style:bold; font-size:13px;" />
+            
+        </hbox>
+         
+        </vbox>
+        <vbox id="scaffoldingBox" width = "900px" align="center" style= "position: relative; margin:auto;" >
+
+    <separator spacing="10px" />
+
+    <grid id ="gridbox" >
+    <auxhead  >
+        <auxheader label="จัดการสัญญา"  align = "center" colspan = "6" />
+    </auxhead>
+        <columns>
+
+            <column label="เลขที่สัญญา"  align="center" />
+            <column label="วันที่ทำสัญญา" align="center" width = "100px" />
+            <column label="พื้นที่จอง" align="center" />
+            <column label="ชื่อผู้จอง"  align="center"/>
+            <column label="แก้ไขสัญญา" align="center" width = "100px"/>
+            <column label="ลบสัญญา" align="center" width = "100px" />
+   
+        </columns>
+        <rows>
+            <row>
+
+            </row>
+        </rows>
+        
+    </grid>
+    
+        
+
+    </vbox>
+        
+        
+        
+    </window>
+
+</zk>
