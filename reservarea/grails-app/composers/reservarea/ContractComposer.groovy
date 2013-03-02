@@ -34,7 +34,19 @@ class ContractComposer extends GrailsComposer {
 					button(label : "del",width : "30px", ,mold:"trendy",onClick : {
 					
 	
-    				
+    							
+		Messagebox.show("คุณต้องการลบสัญญาหรือไม่?","ลบสัญญา", Messagebox.YES | Messagebox.NO,Messagebox.QUESTION,
+        new org.zkoss.zk.ui.event.EventListener(){
+            public void onEvent(Event e){
+                if(Messagebox.ON_YES.equals(e.getName())){
+                    del[a].detach()
+    				def r = Contract.get(a)
+					r.delete()
+				
+                }
+            }
+        }
+    );
 					
 					})
 	
