@@ -50,8 +50,18 @@ class ContractComposer extends GrailsComposer {
 					
 					})
 	
-    				}
-					}
-					}
+    			}
+			}
+		}
+
+
+		 $('#add').on('click',{
+		
+
+		 	redirect(uri: "addcontract.zul")
+
+
+
+		})
     }
 }
