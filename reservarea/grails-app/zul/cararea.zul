@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="reservarea.CarareaComposer">
+
+        <hbox align="center">
+           
+            <image src="${z.resource(dir:'images', file:'a51.jpg' )}"/>
+        </hbox>
+
+   <vbox width="100%" align="stretch">
+     <label value="ระบบลานจอดรถ"  style="font-size:16pt"/>
+    <radiogroup >
+        <grid >
+            <rows>
+                <row spans="5">
+            <label value="ระบุรถยนต์"  style="font-size:14pt"/>   
+                </row>
+                <row>
+                    <radio label="รถยนต์"  id="w1" style="font-size:14pt"/>
+                    <radio label="รถจักรยานยนต์" id="w2" style="font-size:14pt"/>
+                    
+                </row>
+                
+            </rows>
+        </grid>
+    </radiogroup>
+
+    <separator bar="true" />
+    
+ 
+         <hbox align="Left"> 
+            <label value="ทะเบียนรถยนต์" style="font-size:14pt"/>
+             <textbox id="taben" cols="20" width="150px" style="font-size:10pt"/>
+            
+        </hbox>
+        <hbox>
+            <label value="วันและเวลา" style="font-size:14pt"/>   
+             <separator/><separator/><separator/><separator/><separator/><separator/>
+            <datebox id="db" cols="25" width="150px" format="yyyy/MM/dd a hh:mm:ss" />
+        </hbox>
+        <separator />
+        <hbox>
+            <label value="Time Price" style="font-size:14pt"/>
+            <button id="p1" label="ไม่เกิน 3 hr" style="font-size:11pt"/>
+            <button id="p2" label="ไม่เกิน 12 hr" style="font-size:11pt"/>
+            <button id="p3" label="เกิน 24 hr" style="font-size:11pt"/>
+
+        </hbox>
+        <separator bar="true" />
+        <hbox align="Center">
+         <button id="p4" label="submit" style="font-size:12pt"/>
+     </hbox>
+    </vbox>
+
+   
+   <grid>
+            <auxhead>
+                <auxheader colspan="4" label="แสดงข้อมูล" style="font-size:14pt" align="Left" />
+            </auxhead>
+            <columns sizable="true">
+                <column label="car type"  width="200px" style="font-size:11pt"/>
+                <column label="ทะเบียนรถ" width="200px" style="font-size:11pt"/>
+                <column label="Date" width="535px" style="font-size:11pt"/>
+                <column label="Price" width="535px" style="font-size:11pt"/>
+               
+            </columns>
+            <rows>
+                <row>
+                    
+
+                </row>
+            </rows>
+
+    </grid>
+
+
+
+       
+
+        <vbox id="scaffoldingBox"/>
+
+    </window>
+
+</zk>
