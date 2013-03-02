@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="reservarea.LoginComposer">
+
+         <hbox align="center">
+            <image src="${z.resource(dir:'images', file:'zkpowered_s.png')}"/>
+            <image src="${z.resource(dir:'images', file:'grails_logo.png')}"/>
+        </hbox>
+
+           
+        <groupbox>
+        <vbox  width="100%" align="center">
+            <hbox>
+                <label value="User Name:"/>
+                    <textbox id="user_name"/>
+                <label value="password:"/>
+                    <textbox id="password" type="password"/>
+                <button id="btnSave" label="Login"/>
+            </hbox>
+        </vbox>		
+        </groupbox>		
+    </window>
+</zk>
