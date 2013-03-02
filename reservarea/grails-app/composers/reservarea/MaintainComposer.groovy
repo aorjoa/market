@@ -69,7 +69,7 @@ class MaintainComposer extends GrailsComposer {
           if($('#lol1').getText()=="" || $('#lol2').getText()=="" || $('#lol3').getText()==""){
             alert('please input data')
           }else{
-          new Comment(
+          new Maintain(
 
             to:$('#lol1').getText(),
             subject:$('#lol2').getText(),
