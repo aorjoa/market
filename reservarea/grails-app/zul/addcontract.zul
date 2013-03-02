@@ -12,7 +12,7 @@
         <hbox>
             <image src="${z.resource(dir:'images', file:'logofade.gif')}"/>
             
-           <label style = "position:absolute;right:0px;bottom:5px ;font-size:25px;">สัญญาการจองพื้นที่(ฉบับย่อ)</label>
+           <label style = "position:absolute;right:0px;bottom:5px ;font-size:20px;">สัญญาการจองพื้นที่(ฉบับย่อ)</label>
             
         </hbox>
   
@@ -34,6 +34,8 @@
         <hbox align="Center" height="25px">เมื่อวันที่ :<datebox id="in" style= "margin-left: 40px;"/></hbox>
         
         <hbox align="Center" height="25px">พื้นที่จอง :<textbox id="area" style= "margin-left: 40px;"/></hbox>
+
+        <hbox align="Center" height="25px">ราคา :<textbox id="price" style= "margin-left: 55px;"/> บาท / เดือน</hbox>
         
 
         <hbox>ชื่อ-นามสกุล:<textbox id="name" style= "margin-left: 20px;"/></hbox>
@@ -54,7 +56,7 @@
             </vbox> 
 
 
-        <separator spacing="30px" />
+        <separator spacing="10px" />
 
         <button id = "save" label = "บันทึกสัญญา" mold = "trendy"  style= "margin-left: 300px;"/>
         <separator spacing="20px" />
