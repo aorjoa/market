@@ -32,6 +32,7 @@
             <column label="วันที่ทำสัญญา" align="center" width = "100px" />
             <column label="พื้นที่จอง" align="center" />
             <column label="ชื่อผู้จอง"  align="center"/>
+            <column label="ดูสัญญา" align="center" width = "100px"/>
             <column label="แก้ไขสัญญา" align="center" width = "100px"/>
             <column label="ลบสัญญา" align="center" width = "100px" />
    
