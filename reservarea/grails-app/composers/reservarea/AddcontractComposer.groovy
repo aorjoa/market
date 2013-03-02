@@ -19,6 +19,7 @@ class AddcontractComposer extends GrailsComposer {
 			def no = $('#no')[0].text
 			def n = $('#name')[0].text
 			def area = $('#area')[0].text
+			def price = $('#price')[0].text
 			def a = $('#address')[0].text
 			def t = $('#tel')[0].text
 			def d = $('#in').text()
@@ -33,6 +34,7 @@ class AddcontractComposer extends GrailsComposer {
      			no : no,
 				date : d,
 				area : area,
+				price : price,
 				name :n,
 				address :a,
 				tel : t,
