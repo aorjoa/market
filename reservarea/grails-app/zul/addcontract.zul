@@ -7,7 +7,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
-    <window apply="reservarea.AddcontractComposer">
+    <window id = "view" apply="reservarea.AddcontractComposer">
         <vbox width = "900px" style= "position: relative; margin:auto;">
         <hbox>
             <image src="${z.resource(dir:'images', file:'logofade.gif')}"/>

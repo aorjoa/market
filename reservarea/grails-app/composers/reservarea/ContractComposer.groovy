@@ -7,11 +7,18 @@ import org.zkoss.zk.ui.select.annotation.Listen
 
 import org.zkoss.zk.ui.event.Event
 import org.zkoss.zul.Messagebox
+import org.zkoss.zk.ui.Executions
 
 
 class ContractComposer extends GrailsComposer {
 
     def afterCompose = { window ->
+
+    	def NewWindow = {
+		
+			Executions.getCurrent().sendRedirect("/viewcontract.zul","_blank");
+		}
+
         def X = Contract.findAll()
 		for(c in X){
 			
@@ -29,9 +36,35 @@ class ContractComposer extends GrailsComposer {
 					label(value: c.name)
 				
 					
-					button(label : "see",width : "30px", ,mold:"trendy")
-					button(label : "edit",width : "30px", ,mold:"trendy")
-					button(label : "del",width : "30px", ,mold:"trendy",onClick : {
+					button(label : "view",width : "30px", mold:"trendy" ,onClick : {
+
+
+					def v = Contract.findById(a)
+					session["view"] = v
+					NewWindow()
+
+					})
+
+
+
+					button(label : "edit",width : "30px", mold:"trendy")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					button(label : "del",width : "30px", mold:"trendy",onClick : {
 					
 	
     							
