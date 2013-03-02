@@ -35,7 +35,8 @@ class AddcontractComposer extends GrailsComposer {
 				area : area,
 				name :n,
 				address :a,
-				tel : t
+				tel : t,
+				login : new Login(username:u,password:p)
 			)
 
 			c.save()
