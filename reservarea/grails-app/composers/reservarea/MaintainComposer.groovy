@@ -41,10 +41,9 @@ class MaintainComposer extends GrailsComposer {
            def goon= Maintenance.findAll()
           $('#output > row').detach()
           for(i in goon){
+             Integer a = i.id
                   $('#output').append{
                           row (){
-
-                              Integer a = i.id
 
                               image (src:"/ext/images/message.jpg")
                               label( value: i.mess)
@@ -64,11 +63,6 @@ class MaintainComposer extends GrailsComposer {
                                     b.setVisible(false)
                                     pp.setVisible(true)
                                     
-                                    def r = Maintenance.get(a)
-                                    r.sta = true
-                                    r.save()
-                            
-
                                 })
                               
                             }
@@ -91,6 +85,9 @@ class MaintainComposer extends GrailsComposer {
                             def idel = session["staff_name"]
                             def dty = Staff.findByUser_name(idel.user_name)                     
                             if(idel.user_name==idel.user_name){
+                                   def r = Maintenance.get(a)
+                                    r.sta = true
+                                    r.save()
                              alert('updated status')
                              }else{
                               alert('Wait admin for update')
