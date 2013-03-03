@@ -21,36 +21,29 @@
 				<hbox align="center" height="40px"><space bar="false" spacing="0px"/>เบอร์โทร :<space bar="false"/><textbox id = "tx4" />
 				<space bar="false" spacing="37px"/> ร้าน :<space bar="false" spacing="10px"/><textbox id="tx5" />
 				<space bar="false" spacing="100px"/>ค่าเช่า  :<space bar="false" spacing="10px"/><textbox id = "tx6" /></hbox>
-				<hbox align="center" height="40px"><space bar="false" spacing="0px"/>วันที่ทำสัญญา:<space bar="false"/><textbox id = "tx7" />
-				<space bar="false" spacing="37px"/> สถานะ :<space bar="false" spacing="10px"/><textbox id="tx8" /></hbox>
+				<hbox align="center" height="40px"><space bar="false" spacing="0px"/>วันที่ทำสัญญา:<space bar="false"/><textbox id = "tx7" /></hbox>
+				
 		<separator spacing="10px" />		
 		<vbox align="Center" width="900px">
 		<hbox> <button id ="btnsave" label="บันทึก"   height="30px"  width="125px"/> </hbox>
 		</vbox>
-	</groupbox>
-	<separator spacing="10px" />
-	<vbox>
-	<label value = "แจ้งค่าเช่า" />
-	<hbox>
-	<bandbox id="bd" mold="rounded" autodrop="true">
-	<bandpopup>
-	<listbox id="pick" height="200px" width="200px" mold="paging" autopaging="true">
-	<listhead>
-	<listheader label="ชื่อ" />
-	</listhead>
-	</listbox>
-	</bandpopup>
-	</bandbox> ค้นหา	</hbox>
-	<grid align="center" width="900px" height="200px" id="grid" >
-		<columns>
-			<column label="ลำดับ"/>
-			<column label="รหัสพื้นที่"/>
-			<column label="ผู้เช่า"/>
-			<column label="เบอร์โทร"/>
-			<column label="ร้าน"/>
-			<column label="ค่าเช่า"/>
-			<column label="วันที่ทำสัญญา"/>
-			<column label="สถานะการจ่ายค่าเช่า"/>
+			</groupbox>
+			<separator spacing="10px" />
+			<hbox> <button id ="call" label="เรียกรอบ"   height="30px"  width="125px"/> </hbox>
+			<vbox>
+			<label value = "แจ้งค่าเช่า" />
+			
+			<hbox><textbox id = "tx8"  height="20px" /><button id ="btnsearch" label="ค้นหา"   height="25px"  width="50px"/></hbox>
+			<grid align="center" width="900px" height="200px" id="grid" >
+				<columns>
+					<column label="ลำดับ"/>
+					<column label="รหัสพื้นที่"/>
+					<column label="ผู้เช่า"/>
+					<column label="เบอร์โทร"/>
+					<column label="ร้าน"/>
+					<column label="ค่าเช่า"/>
+					<column label="วันที่ทำสัญญา"/>
+					<column label="สถานะการจ่ายค่าเช่า"/>
 			
 		</columns>
 		<rows>

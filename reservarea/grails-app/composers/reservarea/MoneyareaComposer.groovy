@@ -5,72 +5,127 @@ import org.zkoss.zk.grails.composer.*
 import org.zkoss.zk.ui.select.annotation.Wire
 import org.zkoss.zk.ui.select.annotation.Listen
 
+import org.zkoss.zk.ui.event.Event
+import org.zkoss.zul.Messagebox
+
 class MoneyareaComposer extends GrailsComposer {
 
     def afterCompose = { window ->
         // initialize components here
 		
-		$('#btnsave').on('click',{
-		if($('#tx1')[0].getText()=="" || $('#tx2')[0].getText()=="" || $('#tx3')[0].getText()=="" || $('#tx4')[0].getText()=="" ||
-		$('#tx5')[0].getText()==""  || $('#tx6')[0].getText()=="" || $('#tx7')[0].getText()==""  || $('#tx8')[0].getText()==""){
-			alert('กรุณากรอกข้อมูลให้ครบ')
-		}else{
+        Integer i = 1;
+	
+		$('#call').on('click',{
+		
+				Messagebox.show("คุณต้องการเรียกค่าเช่ารายเดือน?","เรียกค่าเช่า", Messagebox.YES | Messagebox.NO,Messagebox.QUESTION,
+        new org.zkoss.zk.ui.event.EventListener(){
+            public void onEvent(Event e){
+                if(Messagebox.ON_YES.equals(e.getName())){
+            
+ 
+		def C = Contract.findAll()
+		
+		for(c in C){	
 			new Moneyarea(
-			no:$('#tx1').getText(),
-			area:$('#tx2').getText(),
-			renter:$('#tx3').getText(),
-			phone:$('#tx4').getText(),
-			store:$('#tx5').getText(),
-			rental:$('#tx6').getText(),
-			date:$('#tx7').getText(),
-			status:$('#tx8').getText()
-			).save()
-			alert('บันทึกเรียบร้อย')
-			$('#tx1')[0].text= ''
-			$('#tx2')[0].text= ''
-			$('#tx3')[0].text= ''
-			$('#tx4')[0].text= ''
-			$('#tx5')[0].text= ''
-			$('#tx6')[0].text= ''
-			$('#tx7')[0].text= ''
-			$('#tx8')[0].text= ''
+			no 		: 	c.no,
+			date	:	c.date,
+			area	: 	c.area,
+			name	: 	c.name,
+			address : 	c.address,
+			tel		: 	c.tel,
+			price	: 	c.price,
+			status : "false"
+				).save()
 			}
-			})
+			
+		               }
+            }
+        }
+    );
+		})
+
 			
 			
-		def mShow = Moneyarea.findAll()
-              for(m in mShow) {
-                $('#pick').append {
-                  listitem(value: m) {
-                    listcell(value: m.area, label: m.area)
+		$('#btnsearch').on('click',{
 
-                    
-                }
-              }
-          }
+		//def gg = Moneyarea.findAllByNo($('#tx8').text())
+		//	ss = Moneyarea.findAllByArea($('#tx8').text())
+		//	 ss = Moneyarea.findAllByRenter($('#tx8').text())
+		//	 ss = Moneyarea.findAllByPhone($('#tx8').text())
+		//	 ss = Moneyarea.findAllByStore($('#tx8').text())
+		//	 ss = Moneyarea.findAllByRental($('#tx8').text())
+		//	 ss = Moneyarea.findAllByDate($('#tx8').text())
+		def gg = Moneyarea.findAllByStatus($('#tx8').text())
+			 
+			 //if(s!= null){alert('000')}
 
-	         $('#pick').on('select', {
-				def ss = $(it).val()
-				
+		for(ss in gg){	
+
 			 $('#grid > rows').append{
-
       
             row{
-			  
+
+		
+			
+			  Integer a = ss.id
               label(value:ss.no)
               label(value:ss.area)
-              label(value:ss.renter)
-              label(value:ss.phone)
-			  label(value:ss.store)
-			  label(value:ss.rental)
+              label(value:ss.name)
+              label(value:ss.tel)
+			  label(value:ss.address)
+			  label(value:ss.price)
 			  label(value:ss.date)
-			  label(value:ss.status)
 			  
-			  
+		if(ss.status == "true"){
+			    button(label : "ชำระเงินแล้ว",width : "30px", mold:"trendy",onClick : {
+										
+		Messagebox.show("คุณต้องการเปลี่ยนสถานะ?","เปลี่ยนสถานะ", Messagebox.YES | Messagebox.NO,Messagebox.QUESTION,
+        new org.zkoss.zk.ui.event.EventListener(){
+            public void onEvent(Event e){
+                if(Messagebox.ON_YES.equals(e.getName())){
+                    
+    				def r = Moneyarea.get(a)
+					r.status = "false"
+					r.save()
+					redirect(uri: "moneyarea.zul")
+                }
+            }
+        }
+    );
+
+})
+		}else{
+
+			  button(label : "ค้างชำระ",width : "30px", mold:"trendy",onClick : {
+										
+		Messagebox.show("คุณต้องการเปลี่ยนสถานะ?","เปลี่ยนสถานะ", Messagebox.YES | Messagebox.NO,Messagebox.QUESTION,
+        new org.zkoss.zk.ui.event.EventListener(){
+            public void onEvent(Event e){
+                if(Messagebox.ON_YES.equals(e.getName())){
+                    
+    				def r = Moneyarea.get(a)
+					r.status = "true"
+					r.save()
+					redirect(uri: "moneyarea.zul")
+                }
+            }
+        }
+    );
+
+})
+			  } //end if
+   				
+			 
             }
 			}
-			
+			 }
 				
 		})
-    }
+		
+		
+		
+    
+	}
 }
+//selectedIndex : {"1"},
+//SelectedIndex()
