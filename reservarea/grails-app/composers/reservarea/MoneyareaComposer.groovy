@@ -24,7 +24,7 @@ class MoneyareaComposer extends GrailsComposer {
             
  
 		def C = Contract.findAll()
-		
+		def d = $('#dd').text()
 		for(c in C){	
 			new Moneyarea(
 			no 		: 	c.no,
@@ -34,6 +34,7 @@ class MoneyareaComposer extends GrailsComposer {
 			address : 	c.address,
 			tel		: 	c.tel,
 			price	: 	c.price,
+			date1	:	d,
 			status : "false"
 				).save()
 			}
@@ -74,6 +75,7 @@ class MoneyareaComposer extends GrailsComposer {
               label(value:ss.tel)
 			  label(value:ss.address)
 			  label(value:ss.price)
+			  label(value:ss.date1)
 			  label(value:ss.date)
 			  
 		if(ss.status == "true"){

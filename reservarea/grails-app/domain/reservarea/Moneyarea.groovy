@@ -9,8 +9,10 @@ class Moneyarea {
 	String 	name
 	String	address
 	String	tel
-	String price
+	String  price
+	String	date1
 	String status
+	
 	
 	
     static constraints = {
