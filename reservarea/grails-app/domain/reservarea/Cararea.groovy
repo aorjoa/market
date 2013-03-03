@@ -6,6 +6,7 @@ class Cararea {
 	String tabean
 	Date   date
 	String hour
+	String price
 
     static constraints = {
     }
