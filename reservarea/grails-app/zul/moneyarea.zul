@@ -11,38 +11,25 @@
 	
         <vbox align="center" width="100%" >
 		 <hbox align="center">
-           <image width="900px" height="175px"  src="${z.resource(dir:'images', file:'photo.png')}"/>
+           <image width="1000px" height="175px"  src="${z.resource(dir:'images', file:'photo.png')}"/>
         </hbox>
-		<groupbox width="900px"  >
-		<caption label="ผลการตรวจ"/>		
-				<hbox align="center" height="40px"><space bar="false" spacing="0px"/>ลำดับที่ :<space bar="false"/><textbox id = "tx1" />
-				<space bar="false" spacing="20px"/>รหัสพื้นที่:<space bar="false" spacing="10px"/><textbox id = "tx2" />
-				<space bar="false" spacing="100px"/>ผู้เช่า  :<space bar="false" spacing="10px"/><textbox id = "tx3" /></hbox>
-				<hbox align="center" height="40px"><space bar="false" spacing="0px"/>เบอร์โทร :<space bar="false"/><textbox id = "tx4" />
-				<space bar="false" spacing="37px"/> ร้าน :<space bar="false" spacing="10px"/><textbox id="tx5" />
-				<space bar="false" spacing="100px"/>ค่าเช่า  :<space bar="false" spacing="10px"/><textbox id = "tx6" /></hbox>
-				<hbox align="center" height="40px"><space bar="false" spacing="0px"/>วันที่ทำสัญญา:<space bar="false"/><textbox id = "tx7" /></hbox>
-				
-		<separator spacing="10px" />		
-		<vbox align="Center" width="900px">
-		<hbox> <button id ="btnsave" label="บันทึก"   height="30px"  width="125px"/> </hbox>
-		</vbox>
-			</groupbox>
+		
 			<separator spacing="10px" />
-			<hbox> <button id ="call" label="เรียกรอบ"   height="30px"  width="125px"/> </hbox>
+			<hbox> <button id ="call" label="เรียกรอบ"   height="30px"  width="125px"/> <space bar="false" spacing="15px"/><datebox id="dd" /></hbox>
 			<vbox>
 			<label value = "แจ้งค่าเช่า" />
 			
 			<hbox><textbox id = "tx8"  height="20px" /><button id ="btnsearch" label="ค้นหา"   height="25px"  width="50px"/></hbox>
-			<grid align="center" width="900px" height="200px" id="grid" >
+			<grid align="center" width="1000px" height="200px" id="grid" >
 				<columns>
-					<column label="ลำดับ"/>
+					<column label="ลำดับ"  width="80px"/>
 					<column label="รหัสพื้นที่"/>
 					<column label="ผู้เช่า"/>
 					<column label="เบอร์โทร"/>
 					<column label="ร้าน"/>
 					<column label="ค่าเช่า"/>
 					<column label="วันที่ทำสัญญา"/>
+					<column label="รอบประจำเดือน"/>
 					<column label="สถานะการจ่ายค่าเช่า"/>
 			
 		</columns>
