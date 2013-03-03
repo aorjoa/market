@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="reservarea.ShowdataComposer">
+
+        <hbox align="center">
+            <image src="${z.resource(dir:'images', file:'grails_logo.png')}"/>
+        </hbox>
+
+
+        <grid id ="gridbox" >
+            <auxhead  >
+                <auxheader label="แสดงข้อมูลข้อมูลผู้เช่า"  style="font-size:30px" align = "center" colspan = "6" />
+            </auxhead>
+            <columns>
+                <column label="เลขที่สัญญา"  align="center" />
+                <column label="วันที่ทำสัญญา" align="center" width = "100px" />
+                <column label="พื้นที่จอง" align="center" />
+                <column label="ชื่อผู้จอง"  align="center"/>
+                <column label="ดูสัญญา" align="center" width = "100px"/>
+                <column label="แก้ไขสัญญา" align="center" width = "100px"/>
+                <column label="ลบสัญญา" align="center" width = "100px" />
+            </columns>
+        </grid>
+
+         <separator spacing="100px" />
+
+
+       <cell colspan="3" style="text-align:center">
+            <vlayout>
+                <hbox style= "margin : auto">
+                    <button id="btnMaintain" label="แจ้งซ่อม"  width="100px" height="30px" />
+                    <button id="btnViewcontract" label="ดูสัญญา"   width="100px" height="30px" />
+                    <button id="btnEditdata" label="แก้ไขข้อมูล"   width="100px" height="30px" />
+                </hbox>
+            </vlayout>
+        </cell>
+
+
+    </window>
+
+</zk>

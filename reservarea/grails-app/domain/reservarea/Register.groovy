@@ -11,7 +11,7 @@ class Register {
 	String birthday
 
 	//Login login
-	
+
 
 	static constraints = {
     }
