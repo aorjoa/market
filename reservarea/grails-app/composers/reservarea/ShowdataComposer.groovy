@@ -36,6 +36,14 @@ class ShowdataComposer extends GrailsComposer {
 
     	})
 
+        $('#btnEditdata').on('Click',{
+
+            
+            Executions.sendRedirect("/show.zul")
+
+
+        })
+
     	
 
 

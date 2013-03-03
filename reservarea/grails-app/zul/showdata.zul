@@ -18,15 +18,46 @@
             <auxhead  >
                 <auxheader label="แสดงข้อมูลข้อมูลผู้เช่า"  style="font-size:30px" align = "center" colspan = "6" />
             </auxhead>
+            
+                
             <columns>
-                <column label="เลขที่สัญญา"  align="center" />
-                <column label="วันที่ทำสัญญา" align="center" width = "100px" />
-                <column label="พื้นที่จอง" align="center" />
-                <column label="ชื่อผู้จอง"  align="center"/>
-                <column label="ดูสัญญา" align="center" width = "100px"/>
-                <column label="แก้ไขสัญญา" align="center" width = "100px"/>
-                <column label="ลบสัญญา" align="center" width = "100px" />
+                <column label="Type" width="120px" />
+                <column label="Content" />
             </columns>
+            <rows>
+               <row>
+                   Name:
+                   
+                   
+                </row>
+                <row>
+                   LastName:
+                  
+                </row>
+                <row>
+                    Age:
+                   
+                </row>
+                
+                <row>
+                    Phone:
+                   
+                    
+                </row>
+                <row>
+                    E-mail:
+                   
+                </row>
+                <row>
+                    Address:
+                   
+                </row>
+                <row>
+                    BirdDay:
+                    
+                </row>
+
+          </rows>
         </grid>
 
          <separator spacing="100px" />
