@@ -1,6 +1,7 @@
 package reservarea
 
 import org.zkoss.zk.grails.composer.*
+import org.zkoss.zk.ui.Executions
 
 import org.zkoss.zk.ui.select.annotation.Wire
 import org.zkoss.zk.ui.select.annotation.Listen
@@ -8,6 +9,15 @@ import org.zkoss.zk.ui.select.annotation.Listen
 class ShowComposer extends GrailsComposer {
 
     def afterCompose = { window ->
+
+
+    	$('#btnSave1').on('Click',{
+
+    		alert('Complete')
+			Executions.sendRedirect("/maintain.zul")
+
+
+    	})
        
     }
 }

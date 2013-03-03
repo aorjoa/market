@@ -62,13 +62,10 @@
                             width="500px;"   tabindex="11" />
                     </vlayout>
                 </row>
-
-
-
-
-
             </rows>
         </grid>
+        <button id="btnSave1"  label="แจ้งซ่อม"/>
+        <button id="btnSave2"  label="ดูสัญญา"/>
 
     </window>
 
