@@ -2,8 +2,8 @@ package reservarea
 
 class Cararea {
 
-	String namecar
-	String taben
+	String car
+	String tabean
 	Date   date
 	String hour
 
