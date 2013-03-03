@@ -11,8 +11,7 @@
 	
         <vbox align="center" width="100%" >
 		 <hbox align="center">
-            <image src="${z.resource(dir:'images', file:'zkpowered_s.png')}"/>
-            <image src="${z.resource(dir:'images', file:'grails_logo.png')}"/>
+           <image width="900px" height="175px"  src="${z.resource(dir:'images', file:'photo.png')}"/>
         </hbox>
 		<groupbox width="900px"  >
 		<caption label="ผลการตรวจ"/>		
