@@ -39,7 +39,7 @@ class ContractComposer extends GrailsComposer {
 					button(label : "view",width : "30px", mold:"trendy" ,onClick : {
 
 
-					def v = Contract.findById(a)
+					def v = Contract.findById(i)
 					session["view"] = v
 					NewWindow()
 
@@ -73,7 +73,7 @@ class ContractComposer extends GrailsComposer {
             public void onEvent(Event e){
                 if(Messagebox.ON_YES.equals(e.getName())){
                     del[a].detach()
-    				def r = Contract.get(a)
+    				def r = Contract.get(i)
 					r.delete()
 				
                 }

@@ -7,7 +7,7 @@ class Contract {
 	String 	name
 	String	address
 	String	tel
-	Integer price
+	String price
 	Login	login
 
 	static hasOne = [login:Login]
