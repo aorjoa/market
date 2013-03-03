@@ -14,14 +14,9 @@ class MaintainComposer extends GrailsComposer {
         
        
         $('#confrim').on('click',{
-<<<<<<< HEAD
+
           def user = session["login_name"]
           def userxx = Login.findByUsername(user.username)
-
-=======
->>>>>>> issue-4333
-
-          def user = session["login_name"]
           
        new Maintenance(
           annu:$('#x1').getText(),
@@ -56,38 +51,59 @@ class MaintainComposer extends GrailsComposer {
                
                            
                             hbox {
-                             
+                               
                               def pp =image (src:"/ext/images/pass.jpg" , visible:false) 
+                             
+                          
                               button(label:'No!', onClick:{ ev ->
                                  // def ss = $(it).target
                                     def b = ev.target 
                                     b.setVisible(false)
                                     pp.setVisible(true)
-              
-                                     
-                                })
-                             
 
+                                })
                               
                             }
                 
                           }
                   }
-                  }
 
-                 selectDelete = $("#output row:last-child button[label='Click!']")
-                        selectDelete.on('click',{ 
+                  selectDelete = $("#output row:last-child button[label='Click!']")
+                      selectDelete.on('click',{ 
                             def idel = session["staff_name"]
                             def dty = Staff.findByUser_name(idel.user_name) 
                              alert('ดูแลโดย Mr.'+idel.user_name)
 
                          })
+                        
                def selectDelete2 = $("#output row:last-child button[label='No!']")
                         selectDelete2.on('click',{ 
-                            //def ss = $(it).val()
-                             alert('updated status')
+                            def idel = session["staff_name"]
+                            def dty = Staff.findByUser_name(idel.user_name) 
 
-                         })  
+                           for(c in Maintenance){
+                                  if(c.sta == false && c.areacode == $(it)[0].id){
+                                      new Maintenance(
+                                      sta:true
+                                      ).save()
+                                  }
+                            }
+
+
+
+
+                           /* def s = $(it).val()
+                            def selectEdit
+                            s.sta = "true"
+                            s = s.merge()*/
+
+                             alert('updated status')
+                         }) 
+
+
+                  }
+
+
            
         })
 
