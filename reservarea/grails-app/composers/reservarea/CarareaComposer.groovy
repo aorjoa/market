@@ -22,7 +22,9 @@ class CarareaComposer extends GrailsComposer {
 
             def es = 50
             def aaa= 100
-            def bbb= 250
+            def bbb= 999
+            def ccc= 400
+            def ddd= 20
 
             if($('#price > radio[checked=true]').text()=="1-4 ชั่วโมง" && $('#ram > radio[checked=true]').text()=="รถยนต์" ){
             def c = new Cararea()
@@ -43,7 +45,7 @@ class CarareaComposer extends GrailsComposer {
             c.hour=$('#price > radio[checked=true]').text()
             c.tabean=$('#tt1').getText() 
             c.date=$('#dd1').val()
-            c.price= "400"
+            c.price= ccc
            
             c.save()
 
@@ -57,7 +59,7 @@ class CarareaComposer extends GrailsComposer {
             c.hour=$('#price > radio[checked=true]').text()
             c.tabean=$('#tt1').getText() 
             c.date=$('#dd1').val()
-            c.price= "20"
+            c.price= ddd
            
             c.save()
 
