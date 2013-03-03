@@ -11,13 +11,11 @@ class ShowComposer extends GrailsComposer {
     def afterCompose = { window ->
 
 
-    	$('#btnSave1').on('Click',{
-
-    		alert('Complete')
-			Executions.sendRedirect("/maintain.zul")
 
 
-    	})
+    	
+
+
        
     }
 }

@@ -10,62 +10,76 @@
     <window apply="reservarea.ShowComposer">
 
         <hbox align="center">
-            <image src="${z.resource(dir:'images', file:'zkpowered_s.png')}"/>
             <image src="${z.resource(dir:'images', file:'grails_logo.png')}"/>
+        </hbox>
+        <hbox  style= "margin : auto">
+        <button  label="RESERVAREA"  width="1200px" height="90px" style="font-size:50px"/>
         </hbox>
 
        <grid>
+
+
             <columns>
                 <column label="Type" width="120px" />
                 <column label="Content" />
             </columns>
             <rows>
-                <row>
-                    Username:
+               <row>
+                   Name:
+                   <textbox id="name" width="200px" tabindex="2"/>
+                   
                 </row>
                 <row>
-                    Password:
+                   LastName:
+                  <textbox id="lastname" width="200px" tabindex="2"/>
                 </row>
                 <row>
-                    ชื่อ:
+                    Age:
+                    <textbox id="age" width="50px" tabindex="2"/>
+                </row>
+                
+                <row>
+                    Phone:
+                    <textbox id="phone" width="300px" tabindex="2"/>
+                    
                 </row>
                 <row>
-                    นามสกุล:
+                    E-mail:
+                    <textbox id="email" width="300px" tabindex="2"/>
                 </row>
                 <row>
-                    เบอร์โทร:
+                    Address:
+                   <textbox id="address" rows="5" cols="80" style= "margin-left: 50px;"/>
                 </row>
                 <row>
-                    อีเมลล์:
-                </row>
-                <row>
-                    ที่อยู่ปัจจุบัน:
-                </row>
-                <row>
-                    วัน เดือน ปีเกิด:
+                    BirdDay:
                     <hbox align="center">
-                        <datebox value="@bind(fx.birthday)"
-                            format="@load(vm.dateFormat)" width="150px"  tabindex="7"/>
+                        <datebox id="birthday"/>
                     </hbox>
-                    <div>
-                        <label sclass="hightlight">Datebox</label>
-                        and
-                        <label sclass="hightlight">Listbox</label>
-                        in select mold
-                    </div>
                 </row>
 
+               
                 <row>
-                    แสดงความคิดเห็น:
-                    <vlayout>
-                        <textbox rows="@load(vm.memoHeight)" value="@bind(fx.memo)"
-                            width="500px;"   tabindex="11" />
-                    </vlayout>
+                    <cell colspan="3" style="text-align:center">
+                    
+                        <vlayout>
+                           <hbox style= "margin : auto">
+                            <label visible="@load(empty vmsgs)"
+                                value="@load(empty vmsgs ? 'Form successfully submitted!' : '', before='submit')" />
+                                <button id="btnSavedata" label="Save"  width="100px" height="30px" />
+                                <button id="btnCleardata" label="Clear"  width="100px" height="30px" />
+                                
+                            </hbox>
+                        </vlayout>
+                   
+                    </cell>
                 </row>
+
+
+
             </rows>
         </grid>
-        <button id="btnSave1"  label="แจ้งซ่อม"/>
-        <button id="btnSave2"  label="ดูสัญญา"/>
+       
 
     </window>
 
