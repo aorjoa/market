@@ -54,17 +54,17 @@
     </vbox>
 
      <grid  id="aaa" 
-            emptyMessage="plz input data naka">
+            emptyMessage=" input data">
             <auxhead>
                 <auxheader colspan="5" label="รายการจอดรถ" align="Left" style="font-size:14pt" />
 
             </auxhead>
             <columns>
-                <column label="Cat type" width="270px" id="z1" style="font-size:11pt"/>
-                <column label="Number car" id="z2" width="270px" style="font-size:11pt"/>
-                <column label="Date" width="270px" id="z4" style="font-size:11pt"/>
-                <column label="Time" width="270px" id="z5" style="font-size:11pt"/>
-                 <column label="Price" width="270px" id="z3" style="font-size:11pt"/>
+                <column label="ประเภทรถ" width="270px" id="z1" style="font-size:11pt"/>
+                <column label="ทะเียนรถ" id="z2" width="270px" style="font-size:11pt"/>
+                <column label="วันและเวลา" width="270px" id="z4" style="font-size:11pt"/>
+                <column label="ชั่งโมง" width="270px" id="z5" style="font-size:11pt"/>
+                 <column label="ราคาต่อชั่งโมง" width="270px" id="z3" style="font-size:11pt"/>
               
             </columns>
             <rows id="qw">

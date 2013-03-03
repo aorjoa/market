@@ -9,7 +9,7 @@ class CarareaComposer extends GrailsComposer {
 
     def afterCompose = { window ->
         // initialize components here
-         $('#p4').on('click',{
+          $('#p4').on('click',{
            if($('#ram').getSelectedItem()==null) {
                 alert("กรุณาเลือกประเภทรถ")
              }else if($('#tt1').getText()=='') {
@@ -20,7 +20,7 @@ class CarareaComposer extends GrailsComposer {
                 alert('คุณกรอกข้อมูลไม่ครบ')
             }else{
             
-        	def c = new Cararea()
+            def c = new Cararea()
             c.car=$('#ram > radio[checked=true]').text()
             c.hour=$('#price > radio[checked=true]').text()
             c.tabean=$('#tt1').getText() 
@@ -39,8 +39,28 @@ class CarareaComposer extends GrailsComposer {
             $('#price1').setSelected(false)
             $('#price2').setSelected(false)
             $('#price3').setSelected(false)
+            
+
+         def ret = Cararea.findAll()
+            $('#qw > row').detach()
+            for (i in ret){
+                $('#qw').append{
+                    row(){
+
+                        label(value:i.car)
+                        label(value:i.tabean)
+                        label(value:i.date)
+                        label(value:i.hour)
+
+
+                    }
+                }
+            } 
+
+
 
             }
-            })
+
+        })
     }
 }
