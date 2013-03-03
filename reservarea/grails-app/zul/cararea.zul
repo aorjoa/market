@@ -7,43 +7,43 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
-    <window apply="reservarea.CarareaComposer">
+    <window apply="reservarea.CarareaComposer" style="background: #FFFFCC">
 
         <hbox align="center">
             <image src="${z.resource(dir:'images', file:'a51.jpg' )}"/>
         </hbox>
 
    <vbox width="100%" align="stretch">
-    <label value="ระบบลานจอดรถ"  style="font-size:17pt"/>
+    <label value="ระบบลานจอดรถ"  style="font-size:17pt;color:#003"/>
     <hbox > <space bar="false"/><radiogroup id = "ram">
-    <label value="ระบุประเภทรถ"  style="font-size:14pt"/>
+    <label value="ระบุประเภทรถ"  style="font-size:14pt;color:#003"/>
                 <space bar="false" spacing="5px"/>  
-                <radio id="ram1" label="รถยนต์"  style="font-size:13pt"  /><space bar="false"/>
-                <radio id="ram2" label="รถจักรยานยนต์"  style="font-size:13pt" />
+                <radio id="ram1" label="รถยนต์"  style="font-size:13pt;color:#003"  /><space bar="false"/>
+                <radio id="ram2" label="รถจักรยานยนต์"  style="font-size:13pt;color:#003" />
                 </radiogroup>
                 </hbox><space bar="false" spacing="105px"/> 
 
     <separator bar="true" />
-    
+    <space />
  
          <hbox align="Left"> 
-            <label value="ทะเบียนรถยนต์" style="font-size:14pt"/>
-             <textbox id="tt1" cols="20" width="150px" style="font-size:10pt"/>
+            <label value="ทะเบียนรถยนต์" style="font-size:14pt;color:#003"/>
+             <textbox id="tt1" cols="20" width="150px" style="font-size:10pt;color:#003"/>
             
         </hbox>
         <hbox>
-            <label value="วันและเวลา" style="font-size:14pt"/>   
+            <label value="วันและเวลา" style="font-size:14pt;color:#003"/>   
              <separator/><separator/><separator/><separator/><separator/><separator/>
-            <datebox id="dd1" cols="25" width="150px" format="yyyy/MM/dd a hh:mm:ss" />
+            <datebox id="dd1" cols="30" width="150px" format="yyyy/MM/dd a hh:mm:ss" />
         </hbox>
         <separator />
-        <hbox><label   value="Time Price" style="font-size:14pt"/><space bar="false"/>
+        <hbox><label   value="Time Price" style="font-size:14pt;color:#003"/><space bar="false"/>
 
         <radiogroup id="price">
                 <space bar="false" spacing="5px"/>  
-                <radio  id="price1" label="1-4 ชั่วโมง" style="font-size:11pt"/>
-                <radio   id="price2" label="4-12 ชั่วโมง" style="font-size:11pt"/>
-                <radio   id="price3" label="12-24 ชั่วโมง" style="font-size:11pt"/>
+                <radio  id="price1" label="1-4 ชั่วโมง" style="font-size:11pt;color:#003"/>
+                <radio   id="price2" label="4-12 ชั่วโมง" style="font-size:11pt;color:#003"/>
+                <radio   id="price3" label="12-24 ชั่วโมง" style="font-size:11pt;color:#003"/>
                 </radiogroup>
                 </hbox><space bar="false" spacing="105px"/> 
         
@@ -54,17 +54,17 @@
     </vbox>
 
      <grid  id="aaa" 
-            emptyMessage=" input data">
+            emptyMessage=" input data" style="color:black">
             <auxhead>
-                <auxheader colspan="5" label="รายการจอดรถ" align="Left" style="font-size:14pt" />
+                <auxheader colspan="5" label="รายการจอดรถ" align="Left"  style="color:#003;background:#BCD0ED;font-size:15pt"/>
 
             </auxhead>
-            <columns>
-                <column label="ประเภทรถ" width="270px" id="z1" style="font-size:11pt"/>
-                <column label="ทะเียนรถ" id="z2" width="270px" style="font-size:11pt"/>
-                <column label="วันและเวลา" width="270px" id="z4" style="font-size:11pt"/>
-                <column label="ชั่งโมง" width="270px" id="z5" style="font-size:11pt"/>
-                 <column label="ราคาต่อชั่งโมง" width="270px" id="z3" style="font-size:11pt"/>
+            <columns menupopup="auto">
+                <column label="ประเภทรถ" width="270px" id="z1" style="color: #003;background:#CCE9FD;font-size:12pt" sort="auto"/>
+                <column label="ทะเบียนรถ" id="z2" width="270px" style="color: #003;background: #CCE9FD;font-size:12pt" sort="auto"/>
+                <column label="วันและเวลา" width="270px" id="z4" style="color:#003;background: #CCE9FD;font-size:12pt" sort="auto"/>
+                <column label="ชั่งโมง" width="270px" id="z5" style="color: #003;background: #CCE9FD;font-size:12pt" sort="auto"/>
+                 <column label="ราคาต่อชั่งโมง" width="270px" id="z3" style="color: #003;background: #CCE9FD;font-size:12pt" sort="auto"/>
               
             </columns>
             <rows id="qw">
