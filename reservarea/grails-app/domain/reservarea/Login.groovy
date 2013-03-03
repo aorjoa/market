@@ -2,12 +2,9 @@ package reservarea
 
 class Login {
 
-	String user
-	String k
-	String p
-	String pass
+	String user_name
+	String password
 
-	Maintenance maintenance
     static constraints = {
     }
 }
