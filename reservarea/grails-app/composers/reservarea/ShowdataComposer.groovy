@@ -44,6 +44,15 @@ class ShowdataComposer extends GrailsComposer {
 
         })
 
+
+        $('#btnMoney').on('Click',{
+
+            
+            Executions.sendRedirect("/moneyarea.zul")
+
+
+        })
+
     	
 
 

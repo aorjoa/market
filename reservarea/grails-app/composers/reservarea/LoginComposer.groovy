@@ -58,9 +58,14 @@ class LoginComposer extends GrailsComposer {
             
             }
             
+        })
+
+        $('#btnCar').on('Click',{
+
+            
+            Executions.sendRedirect("/cararea.zul")
 
 
-          
         })
 
 
