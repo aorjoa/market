@@ -2,12 +2,14 @@ package reservarea
 
 class Login {
 
-	String user
-	String k
-	String p
-	String pass
+	String username
+	String password
 
-	Maintenance maintenance
+
+
+	//static hasOne = [register:Register]
+	static belongsTo = [contract:Contract]
+	static hasMany = [maintenances:Maintenance]
     static constraints = {
     }
 }

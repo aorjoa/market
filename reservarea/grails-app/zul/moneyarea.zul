@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="reservarea.MoneyareaComposer">
+	
+        <vbox align="center" width="100%" >
+		 <hbox align="center">
+           <image width="1000px" height="175px"  src="${z.resource(dir:'images', file:'photo.png')}"/>
+        </hbox>
+		
+			<separator spacing="10px" />
+			<hbox> <button id ="call" label="เรียกรอบ"   height="30px"  width="125px"/> <space bar="false" spacing="15px"/><datebox id="dd" /></hbox>
+			<vbox>
+			<label value = "แจ้งค่าเช่า" />
+			
+			<hbox><textbox id = "tx8"  height="20px" /><button id ="btnsearch" label="ค้นหา"   height="25px"  width="50px"/></hbox>
+			<grid align="center" width="1000px" height="200px" id="grid" >
+				<columns>
+					<column label="ลำดับ"  width="80px"/>
+					<column label="รหัสพื้นที่"/>
+					<column label="ผู้เช่า"/>
+					<column label="เบอร์โทร"/>
+					<column label="ร้าน"/>
+					<column label="ค่าเช่า"/>
+					<column label="วันที่ทำสัญญา"/>
+					<column label="รอบประจำเดือน"/>
+					<column label="สถานะการจ่ายค่าเช่า"/>
+			
+		</columns>
+		<rows>
+			<row>
+			   
+			</row>
+		</rows>
+	</grid>
+	</vbox>
+	
+	<separator spacing="20px" />
+
+        <vbox id="scaffoldingBox"/>
+		</vbox>
+    </window>
+
+</zk>

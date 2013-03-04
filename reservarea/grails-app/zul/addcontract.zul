@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window id = "view" apply="reservarea.AddcontractComposer">
+        <vbox width = "900px" style= "position: relative; margin:auto;">
+        <hbox>
+            <image src="${z.resource(dir:'images', file:'logofade.gif')}"/>
+            
+           <label style = "position:absolute;right:0px;bottom:5px ;font-size:20px;">สัญญาการจองพื้นที่(ฉบับย่อ)</label>
+            
+        </hbox>
+  
+        </vbox>
+
+        <separator spacing="20px" />
+         <vbox width = "900px" style= "position: relative; margin:auto;border:20px solid #eeeeee; border-style:outset;">
+
+          <vbox width = "600px" style= "position: relative; margin:auto;">
+
+        
+
+        <separator spacing="20px" />
+       
+
+       
+        <hbox align="Center" height="25px ">เลขที่สัญญา :<textbox id="no" style= "margin-left: 20px;"/></hbox>
+            
+        <hbox align="Center" height="25px">เมื่อวันที่ :<datebox id="in" style= "margin-left: 40px;"/></hbox>
+        
+        <hbox align="Center" height="25px">พื้นที่จอง :<textbox id="area" style= "margin-left: 40px;"/></hbox>
+
+        <hbox align="Center" height="25px">ราคา :<textbox id="price" style= "margin-left: 55px;"/> บาท / เดือน</hbox>
+        
+
+        <hbox>ชื่อ-นามสกุล:<textbox id="name" style= "margin-left: 20px;"/></hbox>
+    
+            
+        <hbox>ที่อยู่ :<textbox id="address" rows="5" cols="80" style= "margin-left: 50px;"/> <separator/></hbox>
+
+        <hbox>เบอร์ติดต่อ :<textbox id="tel" style= "margin-left: 20px;"/> </hbox>
+
+        <separator spacing="10px" />
+
+        <vbox width = "700px" style= "position: relative ;margin : center;border:1px solid darkgrey;"/>
+
+        <separator spacing="10px" />
+            <vbox align="Left" >
+            <hbox  height="25px">ชื่อผู้ใช้ : <textbox id="user" style= "margin-left: 20px;"/></hbox>
+            <hbox  height="25px">รหัสผ่าน : <textbox id="pass" type="password" style= "margin-left: 20px;"/> </hbox>
+            </vbox> 
+
+
+        <separator spacing="10px" />
+
+        <button id = "save" label = "บันทึกสัญญา" mold = "trendy"  style= "margin-left: 300px;"/>
+        <separator spacing="20px" />
+        </vbox> 
+        </vbox> 
+    </window>
+
+</zk>

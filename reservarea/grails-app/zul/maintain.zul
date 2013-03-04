@@ -9,43 +9,65 @@
 
     <window apply="reservarea.MaintainComposer">
 
-         <hbox align="center" >
+       <hbox align="center" >
             <image src="${z.resource(dir:'images', file:'O1.jpg')}"/>
                 <hbox align="Right">
                      <iframe width="120%" height="120%" src="http://ig.gmodules.com/gadgets/ifr?url=http://www.labpixies.com/campaigns/clock/mini_clock.xml&amp;nocache=0&amp;up_skin_id=&amp;upt_skin_id=hidden&amp;lang=en&amp;country=us&amp;.lang=en&amp;.country=us&amp;synd=ig&amp;mid=34&amp;ifpctok=-3234052241260630457&amp;parent=http://www.google.com&amp;extern_js=/extern_js/f/CgJlbhICdXMrMBI4ACwrMBM4ACw/v3vgcgA0x8g.js" />
                 </hbox>
                 <space /><space /><space /><space /><space /><space /><space />
-                <button id="btnMain" label="Back to Main" image="/images/back1.jpg" dir="reverse" width="200px" height="100px"/>
-               
+                <button label="Back to Main" dir="reverse" width="200px" style="color: #2F4F4F;background: #FFFFFF" image="/images/back.png" id="btnMain"/>
+                
         </hbox>
-
         <toolbar mold="panel" >
-                <label id="Powered By" style="color:green" value="Powered By"/>
-                <label id="Mr" style="color:#cccccc" value="Mrz.oWz Laiiaz"/>
+                <label id="Powered By" style="color:#2F4F4F" value="Powered By"/>
+                <label id="Mr" style="color:#2F4F4F" value="Mrz.oWz Laiiaz"/>
+                <button id="btnOut" label="LogOut" style="color: black;background: #FFFFFF"/>
         </toolbar>
 
          <grid>
             <auxhead>
-                <auxheader colspan="4" label="Maintenance" style="font-size:14pt" align="Right" />
+                <auxheader colspan="4" label="Maintenance" style="color: #FFFFFF;background: #2F4F4F" align="Right"  />
             </auxhead>
             <columns sizable="true">
-                <column label="Basic Information"  width="200px"/>
-                <column label="Particulars" width="535px"/>
+                <column label="Basic Information"  width="200px" style="color: #FFFFFF;background: #2F4F4F"/>
+                <column label="Particulars" width="535px" />
+               
             </columns>
             <rows>
                 <row>
-                 
+                    <label value= "Annunciator :"/>
+                    <textbox id="x1" width="80%"/>
+                     <image src="${z.resource(dir:'images', file:'cd.png')}" />
 
-
-
-
-
-
-
-
-
-                 
                 </row>
+                <row>
+                    <label value= "Message :"/>
+                    <textbox id="x2" width="80%"  rows="2"/>  
+                    <image src="${z.resource(dir:'images', file:'cd.png')}" />     
+
+                </row>
+                <row>
+                    <label value= "Area :"/>
+                    <textbox id="x3" width="80%"/>
+                    <image src="${z.resource(dir:'images', file:'cd.png')}" />
+                </row>
+                <row>
+                    <label value= "Date :"/>
+                    <cell colspan="1">
+                        <datebox id="x4" cols="12" format="long+medium"  mold="rounded" width="230px" />
+                        
+                    </cell>
+                    <image src="${z.resource(dir:'images', file:'cd.png')}" />
+                </row>
+                <row>
+                    <label value="Confirm :" />
+                    <hbox>
+                        <button id="confrim" label="Agree" /> <space />
+                        <button id="clear" label="Clear" />
+                    </hbox>
+                    <image src="${z.resource(dir:'images', file:'cd.png')}" />
+                </row>
+                
             </rows>
         </grid>
 
@@ -54,26 +76,76 @@
         <separator />
 
        
-         <grid height="350px" 
+         <grid  id="aaa" 
             emptyMessage="Nothing in Inbox.">
             <auxhead>
-                <auxheader colspan="4" label="Program" align="left" />
+                <auxheader colspan="6" label="Program" style="color: #FFFFFF;background: #2F4F4F" align="Left"  />
 
             </auxhead>
             <columns>
-                <column label="Status" width="200px" id="z6"/> 
-                <column label="Icon" width="45px" id="z1"/>  
+                <column label="Icon" width="45px" id="z1"/>
                 <column label="Subject" id="z2"/>
                 <column label="Area" width="150px" id="z3"/>
-                <column label="Date" width="200px" id="z4"/>
-                <column label="Repairman" width="150px" id="z5"/>
-                
+                <column label="Date" width="150px" id="z4"/>
+                <column label="Repairman" width="100px" id="z5"/>
+                <column label="Status" width="200px" id="z6"/>
             </columns>
             <rows id="output">
-                
-            </rows>
-            
+        
+            </rows>       
+
         </grid>
+        <separator /><separator />
+
+        <hbox align="Left">
+        <grid width="450px">
+        <columns>
+            <column label="Option" width="100px"  style="color: #FFFFFF;background: #2F4F4F"/>
+            <column label="Message"  style="color: #FFFFFF;background:#2F4F4F"/>
+        </columns>
+
+        <rows>
+         <row>
+                To :
+                <hbox>
+                    <textbox width="150px" id="lol1"/>
+                    <hbox>
+                        <image src="${z.resource(dir:'images', file:'bullet.jpg')}"/>
+                        <label value="Owner or Staff."/>
+                    </hbox>
+                </hbox>
+            </row>
+             <row>
+                Subject :
+                <hbox>
+                    <textbox width="150px" id="lol2"/>
+                    <hbox>
+                        <image src="${z.resource(dir:'images', file:'bullet.jpg')}"/>
+                        <label value="Comment." popup="title" />
+                    </hbox>
+                </hbox>
+            </row>
+            <row>
+                Introduction:
+                <hbox>
+                    <textbox  rows="3" width="250px" id="lol3"/>
+                </hbox>
+            </row>
+            <row>
+                <button id="mess" label="Submit" />
+            </row>
+        </rows>
+    </grid>
+    <space width="110px"/>
+        <image src="${z.resource(dir:'images', file:'sht.jpg')}"/>
+    </hbox>
+
+   
+     <separator />
+      <separator />
+
+
+
 
         <vbox id="scaffoldingBox"/>
 
