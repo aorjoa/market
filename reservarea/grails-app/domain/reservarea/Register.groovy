@@ -9,9 +9,10 @@ class Register {
 	String email
 	String address
 	String birthday
-	Login login
 
 
+	//Login login
+	//static belongsTo = [login:Login]
 		static constraints = {
     }
 }

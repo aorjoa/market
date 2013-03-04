@@ -7,30 +7,47 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
+<style>
+
+    .top {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position:fixed;
+     top:100px;
+     left:600px;
+     }
+</style>
 
 
+<style>
+
+    .top1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position:fixed;
+     top:370px;
+     left:900px;
+     }
+</style>
+
+ <image class="top" src="${z.resource(dir:'images', file:'login.jpg')}" />
     <window apply="reservarea.LoginComposer">
-        <separator spacing="100px" />
-        <hbox style= "margin : auto">
-            <image src="${z.resource(dir:'images', file:'zkpowered_s.png')}"/>
-            <image src="${z.resource(dir:'images', file:'grails_logo.png')}"/>
-        </hbox>
-
-          
-        <separator spacing="50px" />
-        <vbox  height="30px" style= "margin : auto">
+    
+        
+        <vbox class="top1">
             
                 <label value="User Name:"/>
                     <textbox id="user_name"/>
                <label value="password:"/>
                     <textbox id="password" type="password"/>
-                     <separator spacing="30px" />
+                     <separator spacing="5px" />
                 <button id="btnLogin" label="เข้าสู่ระบบ"   width="100px" height="30px" />
+                <separator spacing="5px" />
                 <button id="btnCar" label="ลานจอดรถ"   width="100px" height="30px" />
             
         </vbox>		
-      
-
 
 
     
