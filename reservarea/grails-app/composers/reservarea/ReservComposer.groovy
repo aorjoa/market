@@ -10,6 +10,7 @@ class ReservComposer extends GrailsComposer {
 
     def afterCompose = { window ->
     	//Market mouse events
+       // def checkval = new Sets()
     	$("#market").onMouseOver({
     		$("#market").setTop("50px")
     		$("#market").setLeft("450px")
@@ -149,5 +150,16 @@ class ReservComposer extends GrailsComposer {
             $("window window #$c.areacode").setStyle("text-align:center;background-color:red;")
         }
        }
+            $("window window window").on('click',{
+               for(c in areaselect){
+                    if(c.status == true && c.areacode == $(it)[0].id){
+                        checkval.add($(it)[0].id)
+                        $("#checkval").val(checkval.size())
+                    }
+                }
+             
+          //  alert($(it)[0].id)
+
+            })
     }
 }

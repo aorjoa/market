@@ -72,9 +72,26 @@ cursor:pointer;
    width: 180px; 
  cursor:pointer;
     }
+
+.checkout {
+    display: block;
+    margin-right: 10px ;
+    position:fixed;
+    top:30px;
+    right:10px;
+ cursor:pointer;
+    }
+.checkval {
+    display: block;
+    position:fixed;
+    top:10px;
+    right:8px;
+ cursor:pointer;
+    }
 </style>
 
     <window id="mainwindow" apply="reservarea.ReservComposer">
+
         <hbox align="center">
             <vbox>
             <image src="${z.resource(dir:'images',file:'logofade.gif')}" width="100px" class="centermap" />
@@ -83,7 +100,8 @@ cursor:pointer;
             <image tooltip="markets, position=after_pointer, delay=200" id="market" src="${z.resource(dir:'images',file:'map/market.png')}" width="32%" class="market"/>
             <image tooltip="toys, position=after_pointer, delay=200" id="toy" src="${z.resource(dir:'images',file:'map/toy.png')}" width="20%" class="toy"/>
             <image tooltip="offices, position=after_pointer, delay=200" id="office" src="${z.resource(dir:'images',file:'map/office.png')}" width="20%" class="office"/>
-          
+            <label id="checkval" width="10%" class="checkval" value="กรุณาเลือกพื้นที่ก่อน" />
+            <image id="checkout" src="${z.resource(dir:'images',file:'checkout.png')}" width="10%" class="checkout" />
        </vbox>
         </hbox>
 
@@ -235,12 +253,10 @@ cursor:pointer;
 
 </window>
 
- <window id="popupreservmarket" border="normal" width="500px"  minheight="450" visible="false" >
+ <window id="popupreservmarket" border="normal" minheight="450" visible="false" >
     <caption image="${z.resource(dir:'images',file:'caption.png')}" label=": หน้าต่างจัดการพื้นที่"/>
 <vbox>
-       <window width="100%" border="none" style="text-align:center;" >
     <hbox spacing="0">
-      
         <vbox spacing="0">
             <hbox id="asd" spacing="0">
                 <window width="50px" height="50px" id="a01" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">A01</window>
@@ -287,7 +303,8 @@ cursor:pointer;
     
         </vbox>
     </hbox>
-</window>   
+ <separator Bar="true"/>   
+<label id="statusmarket" value="กรุณาเลือกพื้นที่ที่ต้องการจอง"/>
  </vbox>
 </window>
 
@@ -297,22 +314,22 @@ cursor:pointer;
 <vbox>
      <window width="100%" border="none" style="text-align:center;">
     <hbox spacing="0">
-        <window width="50px" height="50px" id="B01" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B01</window>
+        <window width="50px" height="50px" id="b01" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B01</window>
         <vbox spacing="0">
             <hbox spacing="0">
-                <window width="50px" height="50px" id="B02" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B02</window> <window width="50px" height="50px" id="B03" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B03</window>
+                <window width="50px" height="50px" id="b02" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B02</window> <window width="50px" height="50px" id="b03" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B03</window>
                 <vbox spacing="0">
-                    <window width="50px" height="50px" id="B04" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B04</window> 
-                    <window width="50px" height="50px" id="B05" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B05</window>
+                    <window width="50px" height="50px" id="b04" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B04</window> 
+                    <window width="50px" height="50px" id="b05" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B05</window>
                 </vbox>
             </hbox>
             <hbox spacing="0">
                 <vbox spacing="10px">
-                    <window width="50px" height="50px" id="B06" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B06</window> 
-                    <window width="50px" height="50px" id="B07" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B07</window>
+                    <window width="50px" height="50px" id="b06" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B06</window> 
+                    <window width="50px" height="50px" id="b07" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B07</window>
                 </vbox>
-                <window width="50px" height="50px" id="B08" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B08</window> 
-                <window width="50px" height="50px" id="B09" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B09</window> 
+                <window width="50px" height="50px" id="b08" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B08</window> 
+                <window width="50px" height="50px" id="b09" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B09</window> 
                 <window id="b10" width="50px" height="50px" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B10</window>
                    <window width="50px" height="50px" id="B11" border="normal" style="text-align:center;background-color:blue;cursor:pointer;" >B11</window>
                       <window width="50px" height="50px" id="B12" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">B12</window>
@@ -328,8 +345,6 @@ cursor:pointer;
     <caption image="${z.resource(dir:'images',file:'caption.png')}" label=": หน้าต่างจัดการพื้นที่"/>
 <vbox>
            <window width="100%" border="none" style="text-align:center;">
-
-      
         <vbox spacing="0">
             <hbox spacing="0">
                 <window width="70px" height="70px" id="c01" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">C01</window>
@@ -361,7 +376,6 @@ cursor:pointer;
 </window>       
  </vbox>
 </window>
-       
 
 
 
