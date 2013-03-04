@@ -309,7 +309,7 @@ cursor:pointer;
 </window>
 
 
-<window id="popupreservtoy" border="normal" width="500px"  minheight="450" visible="false">
+<window id="popupreservtoy" border="normal" minheight="450" visible="false">
     <caption image="${z.resource(dir:'images',file:'caption.png')}" label=": หน้าต่างจัดการพื้นที่"/>
 <vbox>
      <window width="100%" border="none" style="text-align:center;">
@@ -336,12 +336,14 @@ cursor:pointer;
             </hbox>
         </vbox>
     </hbox>
-</window>   
+</window>
+ <separator Bar="true"/>   
+<label id="statusmarket" value="กรุณาเลือกพื้นที่ที่ต้องการจอง"/>   
  </vbox>
 </window>
 
 
-<window id="popupreservoffice" border="normal" width="650px"  minheight="450" visible="false">
+<window id="popupreservoffice" border="normal" minheight="450" visible="false">
     <caption image="${z.resource(dir:'images',file:'caption.png')}" label=": หน้าต่างจัดการพื้นที่"/>
 <vbox>
            <window width="100%" border="none" style="text-align:center;">
@@ -373,7 +375,9 @@ cursor:pointer;
                        <window width="70px" height="70px" id="c18" border="normal" style="text-align:center;background-color:blue;cursor:pointer;">C18</window>
             </hbox>
         </vbox>
-</window>       
+</window>
+ <separator Bar="true"/>   
+<label id="statusmarket" value="กรุณาเลือกพื้นที่ที่ต้องการจอง"/>       
  </vbox>
 </window>
 

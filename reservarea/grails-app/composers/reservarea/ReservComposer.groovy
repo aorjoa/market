@@ -10,7 +10,8 @@ class ReservComposer extends GrailsComposer {
 
     def afterCompose = { window ->
     	//Market mouse events
-       // def checkval = new Sets()
+        def checkval = new HashSet()
+        def cost = 0
     	$("#market").onMouseOver({
     		$("#market").setTop("50px")
     		$("#market").setLeft("450px")
@@ -153,13 +154,25 @@ class ReservComposer extends GrailsComposer {
             $("window window window").on('click',{
                for(c in areaselect){
                     if(c.status == true && c.areacode == $(it)[0].id){
-                        checkval.add($(it)[0].id)
-                        $("#checkval").val(checkval.size())
+                        def recheck = checkval.add($(it)[0].id)
+                        $("#checkval").val("จองพื้นที่ "+checkval.size()+" รายการ")
+                        if(recheck==true){
+                        cost+=c.cost
+                    }
                     }
                 }
              
           //  alert($(it)[0].id)
 
             })
+
+        $("#checkout").on('click',{
+            if(checkval.isEmpty() != true){
+             session.cost=cost
+             session.areaselected=checkval
+          
+         }
+            })
+      
     }
 }
