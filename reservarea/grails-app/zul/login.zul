@@ -26,6 +26,7 @@
                     <textbox id="password" type="password"/>
                      <separator spacing="30px" />
                 <button id="btnLogin" label="เข้าสู่ระบบ"   width="100px" height="30px" />
+                <button id="btnCar" label="ลานจอดรถ"   width="100px" height="30px" />
             
         </vbox>		
       
