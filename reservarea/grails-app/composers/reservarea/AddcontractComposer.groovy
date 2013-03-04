@@ -26,7 +26,8 @@ class AddcontractComposer extends GrailsComposer {
 			
 			def u = $('#user')[0].text
 			def p = $('#pass')[0].text
-	
+			
+			def login = new Login(username:u,password:p)
 			
 
      		def c = new Contract(
@@ -38,12 +39,24 @@ class AddcontractComposer extends GrailsComposer {
 				name :n,
 				address :a,
 				tel : t,
-				login : new Login(username:u,password:p)
+				login : login 
 			)
 
 			c.save()
 
+			def r = new Register(
 
+     		 	name : "",
+				lastname : "",
+	 			age : "",
+				phone : "",
+				email : "",
+				address : "",
+				birthday : "",
+				login : login
+			)
+
+			r.save()
 
 
 	Messagebox.show("บันทึกสัญญาเรียบร้อยแล้ว","บันทึกสัญญา", Messagebox.OK,Messagebox.INFORMATION,
