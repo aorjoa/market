@@ -13,51 +13,21 @@
             <image src="${z.resource(dir:'images', file:'grails_logo.png')}"/>
         </hbox>
 
-
-        <grid id ="gridbox" >
-            <auxhead  >
-                <auxheader label="แสดงข้อมูลข้อมูลผู้เช่า"  style="font-size:30px" align = "center" colspan = "6" />
-            </auxhead>
-            
-                
+        <grid id="kung">
             <columns>
-                <column label="Type" width="120px" />
-                <column label="Content" />
+                <column label="name"/>
+                <column label="lastName"/>
+                <column label="age"/>
+                <column label="phone"/>
+                <column label="email"/>
+                <column label="address"/>
+                <column label="birthday"/>
             </columns>
-            <rows>
-               <row>
-                   Name:
-                   
-                   
-                </row>
+            <rows id="kung2">
                 <row>
-                   LastName:
-                  
                 </row>
-                <row>
-                    Age:
-                   
-                </row>
-                
-                <row>
-                    Phone:
-                   
-                    
-                </row>
-                <row>
-                    E-mail:
-                   
-                </row>
-                <row>
-                    Address:
-                   
-                </row>
-                <row>
-                    BirdDay:
-                    
-                </row>
+            </rows>
 
-          </rows>
         </grid>
 
          <separator spacing="100px" />

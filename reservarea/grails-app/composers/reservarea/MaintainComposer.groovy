@@ -121,7 +121,7 @@ class MaintainComposer extends GrailsComposer {
           })
 
          $('#btnMain').on('click',{
-         redirect(uri:"show.zul")
+         redirect(uri:"showdata.zul")
 
           })
 
