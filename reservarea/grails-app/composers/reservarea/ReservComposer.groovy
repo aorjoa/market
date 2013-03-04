@@ -5,7 +5,8 @@ import org.zkoss.zk.grails.composer.*
 import org.zkoss.zk.ui.select.annotation.Wire
 import org.zkoss.zk.ui.select.annotation.Listen
 import org.zkoss.zk.ui.event.MouseEvent
-
+import org.zkoss.zul.Messagebox
+import org.zkoss.zk.ui.event.Event
 class ReservComposer extends GrailsComposer {
 
     def afterCompose = { window ->
@@ -168,8 +169,18 @@ class ReservComposer extends GrailsComposer {
 
         $("#checkout").on('click',{
             if(checkval.isEmpty() != true){
-             session.cost=cost
-             session.areaselected=checkval
+Messagebox.show("ยืนยันการจองพื้นที่ : "+checkval.size()+" ที่ รวมราคา : "+cost+" บาท", null, Messagebox.OK | Messagebox.CANCEL , Messagebox.QUESTION,
+new org.zkoss.zk.ui.event.EventListener() {
+public void onEvent(Event evt) throws InterruptedException {
+if (evt.getName().equals("onOK")) {
+session.cost=cost
+session.areaselected=checkval
+redirect(uri:'addcontract.zul')
+}
+}
+}
+)
+
           
          }
             })
