@@ -38,48 +38,50 @@ class MoneyareaComposer extends GrailsComposer {
 			status : "false"
 				).save()
 			}
+		redirect(uri: "moneyarea.zul")
 			
 		               }
-            }
-        }
-    );
-		})
-
-			
-			
-		$('#btnsearch').on('click',{
-
-		//def gg = Moneyarea.findAllByNo($('#tx8').text())
-		//	ss = Moneyarea.findAllByArea($('#tx8').text())
-		//	 ss = Moneyarea.findAllByRenter($('#tx8').text())
-		//	 ss = Moneyarea.findAllByPhone($('#tx8').text())
-		//	 ss = Moneyarea.findAllByStore($('#tx8').text())
-		//	 ss = Moneyarea.findAllByRental($('#tx8').text())
-		//	 ss = Moneyarea.findAllByDate($('#tx8').text())
-		def gg = Moneyarea.findAllByStatus($('#tx8').text())
-			 
-			 //if(s!= null){alert('000')}
-
-		for(ss in gg){	
-
-			 $('#grid > rows').append{
-      
-            row{
+           			 }
+      			  }
+    			);
+			})
 
 		
-			
-			  Integer a = ss.id
-              label(value:ss.no)
-              label(value:ss.area)
-              label(value:ss.name)
-              label(value:ss.tel)
-			  label(value:ss.address)
-			  label(value:ss.price)
-			  label(value:ss.date1)
-			  label(value:ss.date)
-			  
-		if(ss.status == "true"){
-			    button(label : "ชำระเงินแล้ว",width : "30px", mold:"trendy",onClick : {
+		
+		def mShow = Moneyarea.findAll().date1.unique()
+              for(m in mShow) {
+                $('#tt').append {
+                  listitem(value: m) {
+
+                    listcell(value: m, label: m)
+
+                    
+                }
+              }
+          }
+
+
+
+		$('#tt').on('select', {
+			def rr = $(it).val()
+			def XX = Moneyarea.findAllByDate1(rr)
+				
+			 $('#grid > rows').append{
+
+			for(qq in XX){
+            row{
+			  Integer a = qq.id
+              label(value:qq.no)
+              label(value:qq.area)
+              label(value:qq.name)
+              label(value:qq.tel)
+			  label(value:qq.address)
+			  label(value:qq.price)
+			  label(value:qq.date)
+			  label(value:qq.date1)
+              
+			  if(qq.status == "true"){
+			    button(label : "ชำระเงินแล้ว" ,width : "30px", mold:"trendy",onClick : {
 										
 		Messagebox.show("คุณต้องการเปลี่ยนสถานะ?","เปลี่ยนสถานะ", Messagebox.YES | Messagebox.NO,Messagebox.QUESTION,
         new org.zkoss.zk.ui.event.EventListener(){
@@ -89,7 +91,7 @@ class MoneyareaComposer extends GrailsComposer {
     				def r = Moneyarea.get(a)
 					r.status = "false"
 					r.save()
-					redirect(uri: "moneyarea.zul")
+					
                 }
             }
         }
@@ -98,7 +100,7 @@ class MoneyareaComposer extends GrailsComposer {
 })
 		}else{
 
-			  button(label : "ค้างชำระ",width : "30px", mold:"trendy",onClick : {
+			  button(label : "ค้างชำระ" ,width : "30px", mold:"trendy",onClick : {
 										
 		Messagebox.show("คุณต้องการเปลี่ยนสถานะ?","เปลี่ยนสถานะ", Messagebox.YES | Messagebox.NO,Messagebox.QUESTION,
         new org.zkoss.zk.ui.event.EventListener(){
@@ -108,26 +110,24 @@ class MoneyareaComposer extends GrailsComposer {
     				def r = Moneyarea.get(a)
 					r.status = "true"
 					r.save()
-					redirect(uri: "moneyarea.zul")
+					
                 }
             }
         }
     );
 
 })
-			  } //end if
-   				
-			 
-            }
-			}
-			 }
+							  } 
+          				  }
+						}
+					}
 				
+				})
+		
+		$('#back').on('click',{
+			redirect(uri:'showdata.zul')
 		})
-		
-		
-		
     
 	}
 }
-//selectedIndex : {"1"},
-//SelectedIndex()
+

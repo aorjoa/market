@@ -17,22 +17,32 @@
 			<separator spacing="10px" />
 			<hbox> <button id ="call" label="เรียกรอบ"   height="30px"  width="125px"/> <space bar="false" spacing="15px"/><datebox id="dd" /></hbox>
 			<vbox>
-			<label value = "แจ้งค่าเช่า" />
+			<label value = "แสดงข้อมูลแจ้งค่าเช่า"  style="font-size:13pt" />
+			<hbox>
+				<bandbox id="bb" mold="rounded" autodrop="true">
+				<bandpopup>
+				<listbox id="tt" height="200px" width="200px" mold="paging" autopaging="true">
+				<listhead>
+				<listheader label="รอบการจ่ายค่าเช่า(เดือน)" />
+				</listhead>
+				</listbox>
+				</bandpopup>
+				</bandbox> ค้นหา	</hbox>
 			
-			<hbox><textbox id = "tx8"  height="20px" /><button id ="btnsearch" label="ค้นหา"   height="25px"  width="50px"/></hbox>
 			<grid align="center" width="1000px" height="200px" id="grid" >
 				<columns>
-					<column label="ลำดับ"  width="80px"/>
-					<column label="รหัสพื้นที่"/>
-					<column label="ผู้เช่า"/>
-					<column label="เบอร์โทร"/>
-					<column label="ร้าน"/>
-					<column label="ค่าเช่า"/>
+					<column label="ลำดับ"  width="50px"/>
+					<column label="รหัสพื้นที่"  width="80px"/>
+					<column label="ผู้เช่า"  width="100px"/>
+					<column label="เบอร์โทร"  width="100px"/>
+					<column label="ร้าน" width="120px"/>
+					<column label="ค่าเช่า" width="120px"/>
 					<column label="วันที่ทำสัญญา"/>
-					<column label="รอบประจำเดือน"/>
+					<column label="รอบการจ่ายค่าเช่า(เดือน)"/>
 					<column label="สถานะการจ่ายค่าเช่า"/>
 			
 		</columns>
+	
 		<rows>
 			<row>
 			   
@@ -42,6 +52,7 @@
 	</vbox>
 	
 	<separator spacing="20px" />
+	<hbox> <button id ="back" label="กลับหน้าหลัก"   height="30px"  width="125px"/></hbox>
 
         <vbox id="scaffoldingBox"/>
 		</vbox>
