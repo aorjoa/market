@@ -19,7 +19,9 @@ class ContractComposer extends GrailsComposer {
 			Executions.getCurrent().sendRedirect("/viewcontract.zul","_blank");
 		}
 
+		
         def X = Contract.findAll()
+
 		for(c in X){
 			
 			$('#gridbox > rows ').append{
@@ -68,6 +70,14 @@ class ContractComposer extends GrailsComposer {
                 if(Messagebox.ON_YES.equals(e.getName())){
                     del[a].detach()
     				def r = Contract.get(i)
+					
+						for(ss in r.resv){
+
+							def f = Reservarea.get(ss.id)
+							f.status = true
+							f.save()
+						}
+
 					r.delete()
 				
                 }
@@ -85,7 +95,7 @@ class ContractComposer extends GrailsComposer {
 		 $('#add').on('click',{
 		
 
-		 	redirect(uri: "addcontract.zul")
+		 	redirect(uri: "reserv.zul")
 
 
 

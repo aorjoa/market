@@ -33,9 +33,9 @@
             
         <hbox align="Center" height="25px">เมื่อวันที่ :<datebox id="in" style= "margin-left: 40px;"/></hbox>
         
-        <hbox align="Center" height="25px">พื้นที่จอง :<textbox id="area" style= "margin-left: 40px;"/></hbox>
+        <hbox align="Center" height="25px">พื้นที่จอง :<label id="area" style= "margin-left: 40px;"/></hbox>
 
-        <hbox align="Center" height="25px">ราคา :<textbox id="price" style= "margin-left: 55px;"/> บาท / เดือน</hbox>
+        <hbox align="Center" height="25px">ราคา :<label id="price" style= "margin-left: 55px;"/> บาท / เดือน</hbox>
         
 
         <hbox>ชื่อ-นามสกุล:<textbox id="name" style= "margin-left: 20px;"/></hbox>
