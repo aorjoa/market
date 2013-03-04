@@ -17,6 +17,7 @@ class LoginComposer extends GrailsComposer {
 
             def ss = $('#user_name').getText()
             def e = Login.findByUsername(ss)
+            def s = Staff.findByUser_name(ss) 
             
 
             
@@ -39,6 +40,25 @@ class LoginComposer extends GrailsComposer {
                 }
             
             }
+            else if(s != null)
+            {
+                if($('#password')[0].getText() == s.password)
+                {
+                    
+                    alert('Staff Login Complete')
+                    session["staff_name"]=s
+                    Executions.sendRedirect("/showdata.zul")
+                }
+                else
+                {
+
+                     alert('คุณกรอก Username และ Password ผิด กรุณากรอกใหม่')
+
+                }
+            
+            }
+            
+
 
           
         })
