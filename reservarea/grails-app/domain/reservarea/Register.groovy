@@ -10,9 +10,9 @@ class Register {
 	String address
 	String birthday
 
-	//Login login
 
-
-	static constraints = {
+	Login login
+	static belongsTo = [login:Login]
+		static constraints = {
     }
 }

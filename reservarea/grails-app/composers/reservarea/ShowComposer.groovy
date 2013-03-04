@@ -12,17 +12,18 @@ class ShowComposer extends GrailsComposer {
 
     	$('#btnSavedata').on('click',{
 
-    	//	def e = session["login_name"]
+    	def e = session["login_name"]
+        def v = Contract.findById(e.id)
 	 
 		 new Register(
-			name:        $('#name').text(),
-        	lastname:      $('#lastname').text(),
-            age:            $('#age').text(),
-            phone:          $('#phone').text(),
-        	email:             $('#email').text(),
-			address:         $('#address').text(),
-        	birthday:      $('#birthday').text(),
-        	//login: new Login(username : e.username,password: e.password)
+			name:$('#name').text(),
+        	lastname:$('#lastname').text(),
+            age:$('#age').text(),
+            phone:$('#phone').text(),
+        	email:$('#email').text(),
+			address:$('#address').text(),
+        	birthday:$('#birthday').text(),
+        	login:v
 
       	).save()
 		alert('Editdata  Complete')

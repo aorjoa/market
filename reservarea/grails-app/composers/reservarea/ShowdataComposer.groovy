@@ -25,7 +25,7 @@ class ShowdataComposer extends GrailsComposer {
 
     	$('#btnViewcontract').on('Click',{
 
-    		def e = session["login_name"]
+    		
 
 
     		def a = Login.findByUsername(e.username)
@@ -37,7 +37,7 @@ class ShowdataComposer extends GrailsComposer {
     	})
 
         $('#btnEditdata').on('Click',{
-
+             
             
             Executions.sendRedirect("/show.zul")
 
