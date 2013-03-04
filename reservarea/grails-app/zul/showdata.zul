@@ -39,7 +39,7 @@
                     <button id="btnMaintain" label="แจ้งซ่อม"  width="100px" height="30px" />
                     <button id="btnViewcontract" label="ดูสัญญา"   width="100px" height="30px" />
                     <button id="btnEditdata" label="แก้ไขข้อมูล"   width="100px" height="30px" />
-                    <button id="btnMoney" label="แจ้งค่าเช่า"   width="100px" height="30px" />
+                 
                 </hbox>
             </vlayout>
         </cell>

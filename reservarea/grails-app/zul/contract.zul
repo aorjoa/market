@@ -13,6 +13,8 @@
         <hbox>
             <image src="${z.resource(dir:'images', file:'logofade.gif')}"/>
             
+            <button id = "money" label="ชำระค่าเช่า" mold = "trendy" width = "130px" height = "30px" style = "position:absolute;right:150px;bottom:5px ;font-style:bold; font-size:13px;" />
+
            <button id = "add" label="เพิ่มสัญญา" mold = "trendy" width = "130px" height = "30px" style = "position:absolute;right:0px;bottom:5px ;font-style:bold; font-size:13px;" />
             
         </hbox>

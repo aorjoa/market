@@ -162,7 +162,8 @@ cursor:pointer;
                 <separator Bar="true"/>
                 <hbox>
                 <toolbarbutton id="showdetailpark" label="รายละเอียด" />
-                <toolbarbutton id="showreserpark" label="ระบบจัดการพื้นที่จัดกิจกรรม" style="border-style:dashed;border-width:2px;border-color:red;"/>
+                <toolbarbutton id="showreserpark" label="พื้นที่จัดกิจกรรม" style="border-style:dashed;border-width:2px;border-color:red;"/>
+                <toolbarbutton id="showcarpark" label="ลานจอดรถ" style="border-style:dashed;border-width:2px;border-color:orange;"/>
                 </hbox>
             </vbox>
         </vlayout>

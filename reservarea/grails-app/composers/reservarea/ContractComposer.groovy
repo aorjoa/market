@@ -100,5 +100,14 @@ class ContractComposer extends GrailsComposer {
 
 
 		})
+
+		 	 $('#money').on('click',{
+		
+
+		 	redirect(uri: "moneyarea.zul")
+
+
+
+		})
     }
 }

@@ -14,6 +14,7 @@ class MoneyareaComposer extends GrailsComposer {
         // initialize components here
 		
         Integer i = 1;
+        def XX;
 	
 		$('#call').on('click',{
 		
@@ -62,10 +63,11 @@ class MoneyareaComposer extends GrailsComposer {
 
 
 
-		$('#tt').on('select', {
-			def rr = $(it).val()
-			def XX = Moneyarea.findAllByDate1(rr)
-				
+
+
+		def CreateRow = {
+			$('#grid > rows > row').detach()
+
 			 $('#grid > rows').append{
 
 			for(qq in XX){
@@ -82,7 +84,8 @@ class MoneyareaComposer extends GrailsComposer {
               
 			  if(qq.status == "true"){
 			    button(label : "ชำระเงินแล้ว" ,width : "30px", mold:"trendy",onClick : {
-										
+
+											
 		Messagebox.show("คุณต้องการเปลี่ยนสถานะ?","เปลี่ยนสถานะ", Messagebox.YES | Messagebox.NO,Messagebox.QUESTION,
         new org.zkoss.zk.ui.event.EventListener(){
             public void onEvent(Event e){
@@ -91,7 +94,8 @@ class MoneyareaComposer extends GrailsComposer {
     				def r = Moneyarea.get(a)
 					r.status = "false"
 					r.save()
-					
+					session["date"] = r.date1
+					redirect(uri: "moneyarea.zul")
                 }
             }
         }
@@ -110,6 +114,8 @@ class MoneyareaComposer extends GrailsComposer {
     				def r = Moneyarea.get(a)
 					r.status = "true"
 					r.save()
+					session["date"] = r.date1
+					redirect(uri: "moneyarea.zul")
 					
                 }
             }
@@ -120,12 +126,32 @@ class MoneyareaComposer extends GrailsComposer {
 							  } 
           				  }
 						}
+					
 					}
 				
-				})
-		
-		$('#back').on('click',{
-			redirect(uri:'showdata.zul')
+				
+		} //end closure
+
+
+
+	
+		$('#tt').on('select', {
+			def rr = $(it).val()
+			XX = Moneyarea.findAllByDate1(rr)
+			CreateRow()
+		})	
+
+		if(session["date"] != null){
+			def rr = session["date"]
+			XX = Moneyarea.findAllByDate1(rr)
+			session["date"] = null
+			CreateRow()
+
+
+		}
+
+			$('#back').on('click',{
+			redirect(uri:'contract.zul')
 		})
     
 	}

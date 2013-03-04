@@ -144,6 +144,12 @@ class ReservComposer extends GrailsComposer {
 
             })
 
+         $("#showcarpark").on('click',{
+
+            redirect(uri:'cararea.zul')
+
+        })
+
 
        //Business logic
        def areaselect = Reservarea.findAll()
