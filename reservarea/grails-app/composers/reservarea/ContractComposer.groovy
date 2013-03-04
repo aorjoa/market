@@ -36,7 +36,7 @@ class ContractComposer extends GrailsComposer {
 					label(value: c.name)
 				
 					
-					button(label : "view",width : "30px", mold:"trendy" ,onClick : {
+					button(image: '../reservarea/ext/images/view.png' ,,width : "20px", mold:"trendy" ,onClick : {
 
 
 					def v = Contract.findById(i)
@@ -47,7 +47,7 @@ class ContractComposer extends GrailsComposer {
 
 
 
-					button(label : "edit",width : "30px", mold:"trendy")
+					button(image: '../reservarea/ext/images/edit.png' ,,width : "20px", mold:"trendy")
 
 
 
@@ -58,13 +58,7 @@ class ContractComposer extends GrailsComposer {
 
 
 
-
-
-
-
-
-
-					button(label : "del",width : "30px", mold:"trendy",onClick : {
+					button(image: '../reservarea/ext/images/del.png' ,width : "20px", mold:"trendy",onClick : {
 					
 	
     							
