@@ -12,14 +12,21 @@ import org.zkoss.zul.Messagebox
 class AddcontractComposer extends GrailsComposer {
 
     def afterCompose = { window ->
+
+    			def cost = "" + session["cost"]
+				def areaselected = session["areaselected"]
+				
+				$('#area')[0].value = areaselected
+				$('#price')[0].value = cost
+
        $('#save').on('click',{
 		
-		
+
      		
 			def no = $('#no')[0].text
 			def n = $('#name')[0].text
-			def area = $('#area')[0].text
-			def price = $('#price')[0].text
+			def area = $('#area')[0].value
+			def price = $('#price')[0].value
 			def a = $('#address')[0].text
 			def t = $('#tel')[0].text
 			def d = $('#in').text()
@@ -58,6 +65,26 @@ class AddcontractComposer extends GrailsComposer {
 
 			r.save()
 
+
+			def checkval = new HashSet()
+
+
+
+
+			for(ss in areaselected){
+
+			def tt = Reservarea.findByAreacode(ss)
+			def dd = Reservarea.get(tt.id)
+
+			checkval.add(tt)
+			dd.status = false
+			
+			dd.save()
+			
+			}
+
+			c.resv = checkval
+			c.save()
 
 	Messagebox.show("บันทึกสัญญาเรียบร้อยแล้ว","บันทึกสัญญา", Messagebox.OK,Messagebox.INFORMATION,
         new org.zkoss.zk.ui.event.EventListener(){
